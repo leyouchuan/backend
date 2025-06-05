@@ -151,8 +151,41 @@ async def filter_by_time(category: str, start_time: str = Query(...), end_time: 
 
     return {"totalResults": len(filtered_news), "articles": filtered_news}
 
+
 @router.get("/top-headlines/filter-all-by-time")
 async def filter_all_by_time(start_time: str = Query(...), end_time: str = Query(...)):
+    """根据时间过滤所有头条新闻"""
+    try:
+        start_dt = datetime.fromisoformat(start_time).replace(tzinfo=timezone.utc)
+        end_dt = datetime.fromisoformat(end_time).replace(tzinfo=timezone.utc)
+    except Exception:
+        raise HTTPException(status_code=400, detail="Invalid time format")
+
+    filtered_news = []
+    for category in CATEGORIES:
+        filepath = f"data/top-headlines/category/{category}.json"
+        print(f"Trying to open: {filepath}")  # Debugging line
+        try:
+            with open(filepath, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                print(f"Loaded {len(data.get('articles', []))} articles from {filepath}")  # Debugging line
+        except FileNotFoundError:
+            print(f"File does not exist: {filepath}")  # Debugging line
+            continue
+
+        for news in data.get("articles", []):
+            pub_time_str = news.get("publishedAt")
+            if not pub_time_str:
+                continue
+            try:
+                pub_time = datetime.fromisoformat(pub_time_str.replace("Z", "+00:00"))
+            except Exception:
+                continue
+            
+            if start_dt <= pub_time <= end_dt:
+                filtered_news.append(news)
+
+    return {"totalResults": len(filtered_news), "articles": filtered_news}
     """根据时间过滤所有头条新闻"""
     try:
         start_dt = datetime.fromisoformat(start_time).replace(tzinfo=timezone.utc)
@@ -194,9 +227,10 @@ async def get_everything(source: str):
 
 # Scheduler setup
 scheduler = BackgroundScheduler()
-INTERVAL = 1  # 每分钟运行一次
-scheduler.add_job(func=update_top_headline, trigger="interval", minutes=INTERVAL)
-scheduler.add_job(func=update_everything, trigger="interval", minutes=INTERVAL)
+#INTERVAL = 1  # 每分钟运行一次
+#cheduler.add_job(func=update_top_headline, trigger="interval", minutes=INTERVAL)
+#cheduler.add_job(func=update_everything, trigger="interval", minutes=INTERVAL)
+#每日五点更新：
 
 if not scheduler.running:
     scheduler.start()
