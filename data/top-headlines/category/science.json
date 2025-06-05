@@ -1,0 +1,136 @@
+{
+    "status": "ok",
+    "totalResults": 59,
+    "articles": [
+        {
+            "source": {
+                "id": null,
+                "name": "Live Science"
+            },
+            "author": "Ben Turner",
+            "title": "Mysterious 'mega-tsunamis' that shook the entire world for 9 days revealed by satellite - Live Science",
+            "description": "A new satellite has captured the first direct evidence of a mysterious nine-day seismic signal that shook the world in 2023.",
+            "url": "https://www.livescience.com/planet-earth/tsunami/mysterious-mega-tsunamis-that-shook-the-entire-world-for-9-days-revealed-by-satellite",
+            "urlToImage": "https://cdn.mos.cms.futurecdn.net/sZd2Ej49genYSqFZAhJPnn.png",
+            "publishedAt": "2025-06-03T09:00:00Z",
+            "content": "Scientists have made the first direct observations of a strange seismic event that shook the world for nine consecutive days in 2023 and confirmed its cause: two \"mega-tsunamis\" that sloshed around a… [+3603 chars]"
+        },
+        {
+            "source": {
+                "id": "associated-press",
+                "name": "Associated Press"
+            },
+            "author": "Adithi Ramakrishnan",
+            "title": "How a new planetarium show helped scientists unlock a cosmic secret - AP News",
+            "description": "Scientists say a new planetarium show about the Milky Way has helped them unlock one of the solar system’s many secrets. Experts at the American Museum of Natural History in New York were fine-tuning a scene about the Oort Cloud that's far beyond Pluto. Scien…",
+            "url": "https://apnews.com/article/museum-planetarium-oort-cloud-b0050c65ebff830812b505cdd8c476ec",
+            "urlToImage": "https://dims.apnews.com/dims4/default/b8fb152/2147483647/strip/true/crop/3000x1688+0+0/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F56%2F41%2F44d7972a8b78b35aa59892922cfa%2Fe5226997a00249c48df7927f92857a64",
+            "publishedAt": "2025-06-03T09:00:00Z",
+            "content": "NEW YORK (AP) Scientists have unlocked one of the solar systems many secrets from an unexpected source: a planetarium show opening to the public on Monday.\r\nAt the American Museum of Natural History … [+2677 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "SciTechDaily"
+            },
+            "author": null,
+            "title": "They Were 8,000-Pound Sloths With Claws and Armor – Then Humans Showed Up - SciTechDaily",
+            "description": "New research shows 8,000-pound sloths once dug caves, adapted to oceans, and roamed widely—until climate and humans brought their downfall.",
+            "url": "https://scitechdaily.com/they-were-8000-pound-sloths-with-claws-and-armor-then-humans-showed-up/",
+            "urlToImage": "https://scitechdaily.com/images/Ancient-Sloths-Art-Concept.jpg",
+            "publishedAt": "2025-06-03T08:30:46Z",
+            "content": "New research shows 8,000-pound sloths once dug caves, adapted to oceans, and roamed widely—until climate and humans brought their downfall. Credit: SciTechDaily.com\r\nLong before they became tree-hugg… [+12294 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "ScienceAlert"
+            },
+            "author": "ScienceAlert Staff",
+            "title": "Water Discovered Around a Young, Sun-Like Star For First Time - ScienceAlert",
+            "description": "For decades it was thought that water was prevalent in the outer reaches of the Solar System early in its history, with comets and asteroids delivering moisture to Earth and the inner planets during the Late Heavy Bombardment period around 4 billion years ago.",
+            "url": "https://www.sciencealert.com/water-discovered-around-a-young-sun-like-star-for-first-time",
+            "urlToImage": "https://www.sciencealert.com/images/2025/06/water_planetary_disk_header.jpg",
+            "publishedAt": "2025-06-03T04:56:10Z",
+            "content": "For decades it was thought that water was prevalent in the outer reaches of the Solar System early in its history, with comets and asteroids delivering moisture to Earth and the inner planets during … [+4135 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Farmingdale-observer.com"
+            },
+            "author": null,
+            "title": "13 million years ago, this object released as much energy as a billion suns in a fraction of a second! - Farmingdale Observer",
+            "description": "A neutron star is formed when the core of a massive star collapses at the end of its life under the effect of gravitation. As the star dies in a supernova, it leaves behind only a small object composed almost entirely of neutrons held together. Physically, a …",
+            "url": "https://farmingdale-observer.com/2025/06/02/13-million-years-ago-this-object-released-as-much-energy-as-a-billion-suns-in-a-fraction-of-a-second/",
+            "urlToImage": null,
+            "publishedAt": "2025-06-03T02:34:00Z",
+            "content": "A neutron star is formed when the core of a massive star collapses at the end of its life under the effect of gravitation. As the star dies in a supernova, it leaves behind only a small object compos… [+1955 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "The Conversation Africa"
+            },
+            "author": "Alexander Rawlings, Ruby Wright",
+            "title": "Astronomers thought the Milky Way was doomed to crash into Andromeda. Now they’re not so sure - The Conversation",
+            "description": "The odds of a galactic collision in our distant future are much lower than we thought, according to new simulations.",
+            "url": "https://theconversation.com/astronomers-thought-the-milky-way-was-doomed-to-crash-into-andromeda-now-theyre-not-so-sure-257825",
+            "urlToImage": "https://images.theconversation.com/files/671460/original/file-20250602-56-o8xc4n.jpeg?ixlib=rb-4.1.0&rect=0%2C363%2C7510%2C3755&q=45&auto=format&w=1356&h=668&fit=crop",
+            "publishedAt": "2025-06-02T20:26:17Z",
+            "content": "For years, astronomers have predicted a dramatic fate for our galaxy: a head-on collision with Andromeda, our nearest large galactic neighbour. This merger expected in about 5 billion years has becom… [+3992 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "AL.com"
+            },
+            "author": "John R. Roby | JRoby@al.com",
+            "title": "Trump’s budget puts Huntsville-made spacecraft on the chopping block - AL.com",
+            "description": "A 2024 study found a greater economic impact for NASA’s Artemis-related work in Alabama than in any other state.",
+            "url": "https://www.al.com/news/huntsville/2025/06/trumps-budget-puts-huntsville-made-spacecraft-on-the-chopping-block.html",
+            "urlToImage": "https://www.al.com/resizer/v2/FVFX5TGWOBHHFEISMTO5GTMNS4.PNG?auth=6d2d476df2283f41428fbe78f890d507d536d819c145a9ca5c3c2da30b96b784&width=1280&quality=90",
+            "publishedAt": "2025-06-02T20:17:00Z",
+            "content": "NASA is being directed to phase out multibillion-dollar programs, managed from its flagship center in Huntsville, that are designed to ferry people to and from the moon.\r\nPresident Donald Trumps budg… [+4028 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "PetaPixel"
+            },
+            "author": "Kate Garibaldi",
+            "title": "Rare Red Sprite Photographed in Tibet Dazzles Social Media - PetaPixel",
+            "description": "Dazzling night sky phenomenon caught on camera.",
+            "url": "https://petapixel.com/2025/06/02/rare-red-sprite-photographed-in-tibet-dazzles-social-media/",
+            "urlToImage": "https://petapixel.com/assets/uploads/2025/06/Dong-Shuchang-Red-Sprites-May-2025-PetaPixel-BG.jpg",
+            "publishedAt": "2025-06-02T18:45:28Z",
+            "content": "Tibet’s night sky was recently illuminated by an extraordinary natural spectacle that captured the imagination of millions across social media: a rare phenomenon known as a red sprite. \r\nThis remarka… [+6832 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Phys.Org"
+            },
+            "author": "Elke Müller",
+            "title": "Supercomputer simulation reveals how merging neutron stars form black holes and powerful jets - Phys.org",
+            "description": "Merging neutron stars are excellent targets for multi-messenger astronomy. This modern and still very young method of astrophysics coordinates observations of the various signals from one and the same astrophysical source. When two neutron stars collide, they…",
+            "url": "https://phys.org/news/2025-06-supercomputer-simulation-reveals-merging-neutron.html",
+            "urlToImage": "https://scx2.b-cdn.net/gfx/news/hires/2025/breakthrough-in-simula.jpg",
+            "publishedAt": "2025-06-02T18:41:38Z",
+            "content": "Merging neutron stars are excellent targets for multi-messenger astronomy. This modern and still very young method of astrophysics coordinates observations of the various signals from one and the sam… [+4891 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Farmingdale-observer.com"
+            },
+            "author": null,
+            "title": "Forgotten in a collection, the discovery of this fossil presents a real problem for scientists as it doesn't belong to any known living family. - Farmingdale Observer",
+            "description": "In a remarkable scientific discovery, researchers have unearthed a plant fossil that defies conventional botanical classification. This 47-million-year-old specimen, named Othniophyton elongatum, has left paleobotanists puzzled as it appears to belong to no k…",
+            "url": "https://farmingdale-observer.com/2025/06/02/forgotten-in-a-collection-the-discovery-of-this-fossil-presents-a-real-problem-for-scientists-as-it-doesnt-belong-to-any-known-living-family/",
+            "urlToImage": null,
+            "publishedAt": "2025-06-02T18:38:00Z",
+            "content": "In a remarkable scientific discovery, researchers have unearthed a plant fossil that defies conventional botanical classification. This 47-million-year-old specimen, named Othniophyton elongatum, has… [+5005 chars]"
+        }
+    ]
+}

@@ -1,0 +1,123 @@
+{
+    "status": "ok",
+    "totalResults": 64,
+    "articles": [
+        {
+            "source": {
+                "id": "ars-technica",
+                "name": "Ars Technica"
+            },
+            "author": "Dan Goodin",
+            "title": "Meta and Yandex are de-anonymizing Android users’ web browsing identifiers - Ars Technica",
+            "description": "Abuse allows Meta and Yandex to attach persistent identifiers to detailed browsing histories.",
+            "url": "https://arstechnica.com/security/2025/06/headline-to-come/",
+            "urlToImage": "https://cdn.arstechnica.net/wp-content/uploads/2025/06/android-tracking-binoculars-1152x648.jpg",
+            "publishedAt": "2025-06-03T12:00:48Z",
+            "content": null
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Nintendo Life"
+            },
+            "author": "Ollie Reynolds",
+            "title": "Nintendo Prepping For All Switch 2 Eventualities With 'Out Of Stock' Signs - Nintendo Life",
+            "description": "Please try again",
+            "url": "https://www.nintendolife.com/news/2025/06/nintendo-prepping-for-all-switch-2-eventualities-with-out-of-stock-signs",
+            "urlToImage": "https://images.nintendolife.com/79ea6205ebe25/large.jpg",
+            "publishedAt": "2025-06-03T11:15:00Z",
+            "content": "Image: Nintendo Life\r\nThe upcoming Switch 2 is expected to be a pretty huge hit when it launches in uhh... just over a day. In fact, Nintendo has previously gone on record to state that it probably w… [+1557 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Android Authority"
+            },
+            "author": null,
+            "title": "I ignored Google's passkey prompts for months, but now I feel silly for waiting - Android Authority",
+            "description": "Passkeys offer a big security advantage over passwords, and in my experience, are far more convenient too. Here's why you should switch too.",
+            "url": "https://www.androidauthority.com/passkeys-vs-passwords-google-account-security-3558854/",
+            "urlToImage": "https://www.androidauthority.com/wp-content/uploads/2025/05/google-passkey-login-prompt-scaled.jpg",
+            "publishedAt": "2025-06-03T11:06:52Z",
+            "content": "I have a 22-character long password thats a random mix of letters, numbers, and special characters. But entering this password on a brand new device has become a chore. Add a two-factor authenticatio… [+9783 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Videocardz.com"
+            },
+            "author": null,
+            "title": "Epic Games to include open-source Arm Accuracy Super Resolution (ASR) into Fornite - VideoCardz.com",
+            "description": "Epic Games integrating ASR into Fortnite Open-Source ASR coming to popular game.  We definitely haven’t heard much about Arm Accuracy Super Resolution recently, but today Arm and Epic Games have some big news to share: they are adding ASR integration into For…",
+            "url": "https://videocardz.com/newz/epic-games-to-include-open-source-arm-accuracy-super-resolution-asr-into-fornite",
+            "urlToImage": "https://cdn.videocardz.com/1/2025/06/ASR-FORTNITE.jpg",
+            "publishedAt": "2025-06-03T10:44:00Z",
+            "content": "Epic Games integrating ASR into Fortnite\r\nOpen-Source ASR coming to popular game. \r\nWe definitely haven’t heard much about Arm Accuracy Super Resolution recently, but today Arm and Epic Games have so… [+1504 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Eurogamer.net"
+            },
+            "author": "Ed Nightingale",
+            "title": "Elden Ring Nightreign two-player mode confirmed, as FromSoftware celebrates 3.5m players - Eurogamer",
+            "description": "Elden Ring Nightreign has now had 3.5 million players, in less than a week since its release.",
+            "url": "https://www.eurogamer.net/elden-ring-nightreign-two-player-mode-confirmed-as-fromsoftware-celebrates-35m-players",
+            "urlToImage": "https://assetsio.gnwcdn.com/ELDEN-RING-NIGHTREIGN-_-Official-Launch-Trailer-1-27-screenshot.png?width=1200&height=630&fit=crop&enable=upscale&auto=webp",
+            "publishedAt": "2025-06-03T08:32:53Z",
+            "content": "Elden Ring Nightreign has now had 3.5 million players, less than a week since its release.\r\nFromSoftware shared the news in a social media post, which also confirmed duo expeditions will be added \"at… [+1938 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Forbes"
+            },
+            "author": "Zak Doffman",
+            "title": "Why You Should Stop Texting On Your iPhone Or Android Phone - Forbes",
+            "description": "New update suddenly gives smartphone users a reason to ditch texts.",
+            "url": "https://www.forbes.com/sites/zakdoffman/2025/06/03/why-you-should-stop-texting-on-your-iphone-or-android-phone/",
+            "urlToImage": "https://imageio.forbes.com/specials-images/imageserve/683afabc49521e18ed8a3305/0x0.jpg?format=jpg&crop=1352,761,x464,y300,safe&height=900&width=1600&fit=bounds",
+            "publishedAt": "2025-06-03T08:10:00Z",
+            "content": "Its time to stop texting\r\ngetty\r\nRepublished on June 3 with another new push for users to ditch text messaging.\r\nThis is the biggest shake-up to texting and messaging in years. And for Apple and Goog… [+4983 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Nintendo Life"
+            },
+            "author": "Liam Doolan",
+            "title": "Nintendo Switch System Update 20.1.1 Is Now Live, Here Are The Full Patch Notes - Nintendo Life",
+            "description": "Just days out from the Switch 2's launch",
+            "url": "https://www.nintendolife.com/news/2025/06/nintendo-switch-system-update-20-1-1-is-now-live-here-are-the-full-patch-notes",
+            "urlToImage": "https://images.nintendolife.com/b3e7b89175cf2/large.jpg",
+            "publishedAt": "2025-06-03T06:05:11Z",
+            "content": "Image: Nintendo\r\nThe Switch 2's launch is just around the corner but it hasn't forgotten about the original system (at least yet). After a few updates in May, we've now got the very first firmware pa… [+990 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Nintendo Life"
+            },
+            "author": "Liam Doolan",
+            "title": "Video: Street Fighter 6 Showcases Four New Character Outfits - Nintendo Life",
+            "description": "The new DLC drops this week",
+            "url": "https://www.nintendolife.com/news/2025/06/video-street-fighter-6-showcases-four-new-character-outfits",
+            "urlToImage": "https://images.nintendolife.com/ea7891cc3f95d/large.jpg",
+            "publishedAt": "2025-06-03T02:05:00Z",
+            "content": "Subscribe to Nintendo Life on YouTube815k\r\nCapcom is this week releasing the Switch 2 version of Street Fighter 6 and alongside this it will be releasing the DLC fighter Elena.\r\nAs part of this, cert… [+968 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "TrueAchievements"
+            },
+            "author": null,
+            "title": "Xbox sale round-up June 3, 2025 - Games - TrueAchievements",
+            "description": "New Xbox sales are now live, with big discounts on Grand Theft Auto V, Red Dead Redemption 2, Red Dead Redemption, Assassin's Creed II, Human Fall Flat, Mortal Kombat X, Assassin's Creed Odyssey and more",
+            "url": "https://www.trueachievements.com/n59171/xbox-sale-roundup-june-3-2025-games",
+            "urlToImage": "https://www.trueachievements.com/imgs/113479/xbox-weekly-sales.jpg",
+            "publishedAt": "2025-06-03T00:20:47Z",
+            "content": "New Xbox sales are now live, with big discounts on Grand Theft Auto V, Red Dead Redemption 2, Red Dead Redemption, Assassin's Creed II, Human Fall Flat, Mortal Kombat X, Assassin's Creed Odyssey and … [+3 chars]"
+        }
+    ]
+}

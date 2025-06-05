@@ -1,0 +1,136 @@
+{
+    "status": "ok",
+    "totalResults": 68,
+    "articles": [
+        {
+            "source": {
+                "id": "the-wall-street-journal",
+                "name": "The Wall Street Journal"
+            },
+            "author": "WSJ",
+            "title": "Stock Market Today: Dow Futures Fall; OECD Cuts U.S. Growth Outlook — Live Updates - WSJ",
+            "description": null,
+            "url": "https://www.wsj.com/livecoverage/stock-market-today-trump-tariffs-trade-war-06-03-2025",
+            "urlToImage": null,
+            "publishedAt": "2025-06-03T12:34:00Z",
+            "content": null
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "BBC News"
+            },
+            "author": null,
+            "title": "Donald Trump's tariffs will hurt global growth, OECD warns - BBC",
+            "description": "The influential policy group lowers its forecast for the world's economy due to US trade barriers.",
+            "url": "https://www.bbc.com/news/articles/cq69j753egeo",
+            "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/f92b/live/12d30d50-4053-11f0-95b4-19782fc5d14e.jpg",
+            "publishedAt": "2025-06-03T12:21:16Z",
+            "content": "Dearbail JordanBusiness reporter, BBC News\r\nGlobal economic growth is set to be slower this year largely because of Donald Trump's US tariffs, according to a leading international policy group.\r\nWorl… [+3220 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Electrek"
+            },
+            "author": "Fred Lambert",
+            "title": "Tesla (TSLA) sales continue to crash in Europe as it clings to a fluke in Norway - Electrek",
+            "description": "Tesla’s sales continue to crash in Europe despite the availability of the new Model Y and record discounts. However, the...",
+            "url": "http://electrek.co/2025/06/03/tesla-tsla-sales-continue-crash-europe-clings-fluke-norway/",
+            "urlToImage": "https://i0.wp.com/electrek.co/wp-content/uploads/sites/3/2025/01/Model-Y-2-Along-the-Way-Tablet-CN.png-e1736950646574.jpeg?resize=1200%2C628&quality=82&strip=all&ssl=1",
+            "publishedAt": "2025-06-03T11:35:00Z",
+            "content": "Tesla’s sales continue to crash in Europe despite the availability of the new Model Y and record discounts.\r\nHowever, the automaker clings to a good month in Norway, which is not particularly impress… [+2412 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Nio.com"
+            },
+            "author": null,
+            "title": "NIO Inc. Reports Unaudited First Quarter 2025 Financial Results - NIO",
+            "description": "SHANGHAI, June 03, 2025 (GLOBE NEWSWIRE) -- NIO Inc. (NYSE: NIO; HKEX: 9866; SGX: NIO) (“NIO” or the “Company”), a pioneer and a leading company in the global smart electric vehicle market, today announced its unaudited financial results for the first quarter…",
+            "url": "https://ir.nio.com/news-releases/news-release-details/nio-inc-reports-unaudited-first-quarter-2025-financial-results/",
+            "urlToImage": null,
+            "publishedAt": "2025-06-03T11:27:28Z",
+            "content": "SHANGHAI, June 03, 2025 (GLOBE NEWSWIRE) -- NIO Inc. (NYSE: NIO; HKEX: 9866; SGX: NIO) (NIO or the Company), a pioneer and a leading company in the global smart electric vehicle market, today announc… [+44465 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "CNBC"
+            },
+            "author": "Brandon Gomez",
+            "title": "Hims & Hers to acquire European telehealth platform in global expansion - CNBC",
+            "description": "Hims & Hers Health will acquire Zava, expanding the company's services to Ireland, France and Germany and growing its active customer base by roughly 50%.",
+            "url": "https://www.cnbc.com/2025/06/03/hims-hers-to-acquire-zava-european-telehealth-platform.html",
+            "urlToImage": "https://image.cnbcfm.com/api/v1/image/108107019-1740494267864-gettyimages-2198663532-HIMS__HERS.jpeg?v=1748895638&w=1920&h=1080",
+            "publishedAt": "2025-06-03T11:00:01Z",
+            "content": "Hims &amp; Hers Health announced Tuesday it will acquire European telehealth platform Zava in its push to expand globally.\r\n\"We're excited to take this moment to really accelerate both the European e… [+2615 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "CNBC"
+            },
+            "author": "Pippa Stevens",
+            "title": "Meta signs nuclear power deal with Constellation Energy - CNBC",
+            "description": "Meta has signed a 20-year agreement to buy nuclear power from Constellation Energy, continuing the wave of tech giants teaming up with the industry.",
+            "url": "https://www.cnbc.com/2025/06/03/meta-signs-nuclear-power-deal-with-constellation-energy-.html",
+            "urlToImage": "https://image.cnbcfm.com/api/v1/image/107389628-17108719542022-11-09t164207z_798327205_rc2eix9j5b73_rtrmadp_0_meta-layoffs.jpeg?v=1737658509&w=1920&h=1080",
+            "publishedAt": "2025-06-03T10:31:00Z",
+            "content": "Meta has signed a 20-year agreement to buy nuclear power from Constellation Energy, continuing the wave of tech giants teaming up with the industry in order to meet the growing power needs of data ce… [+3505 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "NPR"
+            },
+            "author": "",
+            "title": "Can bringing back manufacturing help the heartland catch up with 'superstar' cities? : Planet Money - NPR",
+            "description": "In recent decades, America has seen economic opportunities concentrated in superstar cities. Manufacturing boosters hope reshoring factories could help change that. We look at the theory and evidence.",
+            "url": "https://www.npr.org/sections/planet-money/2025/06/03/g-s1-70167/can-bringing-back-manufacturing-help-the-heartland-catch-up-with-superstar-cities",
+            "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/4000x2250+0+206/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fb0%2F55%2F6492befb41f988a070d519fb1beb%2Fgettyimages-2216884032.jpg",
+            "publishedAt": "2025-06-03T10:30:00Z",
+            "content": "This is Part 3 in our Planet Money newsletter series on manufacturing in America. Part 1\r\n asked why Americans aren't filling the manufacturing jobs that are already here. Part 2\r\n dived deep into ec… [+15349 chars]"
+        },
+        {
+            "source": {
+                "id": "axios",
+                "name": "Axios"
+            },
+            "author": "Sami Sparber, Emily Peck",
+            "title": "It's a homebuyer's market — if you can afford one - Axios",
+            "description": "Redfin estimates there are nearly half a million more sellers than buyers now.",
+            "url": "https://www.axios.com/2025/06/03/homes-buyers-sellers-redfin",
+            "urlToImage": "https://images.axios.com/2cwjOEaE9jCIVcsUOPrfyMCm3u0=/0x0:1600x900/1366x768/2025/06/02/1748901166575.png",
+            "publishedAt": "2025-06-03T09:03:04Z",
+            "content": "It's a buyer's market in real estate  if you can afford it: There are nearly 500,000 more home sellers than buyers in the U.S. housing market, Redfin estimates.\r\nWhy it matters: That's the widest gap… [+2403 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "NPR"
+            },
+            "author": "",
+            "title": "The fate of the EV tax credits depends on the GOP’s megabill - NPR",
+            "description": "The House version of the tax bill would revoke credits for EVs starting at the end of this year. If the plan survives, it would dramatically shape automaker investments and EV sales.",
+            "url": "https://www.npr.org/2025/06/03/nx-s1-5414604/ev-tax-credits-republican-bill",
+            "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/7164x4030+0+1173/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F60%2F61%2F38739d3e4b63bbd9bbadb22d8f97%2Fgettyimages-2215956747.jpg",
+            "publishedAt": "2025-06-03T09:00:00Z",
+            "content": "The future of the American auto industry and what's parked in your driveway could be shaped by negotiations on Capitol Hill right now.\r\nThat's because the version of what President Trump calls the \"b… [+7306 chars]"
+        },
+        {
+            "source": {
+                "id": "business-insider",
+                "name": "Business Insider"
+            },
+            "author": "Grace Kay",
+            "title": "Recording reveals what Tesla training instructor told staff about company culture - Business Insider",
+            "description": "\"A lot of people leave this company, and they have kind of a negative taste in their mouth,\" the trainer said, urging workers to help improve things.",
+            "url": "https://www.businessinsider.com/tesla-burnout-factory-shutdown-worker-culture-training-2025-5",
+            "urlToImage": "https://i.insider.com/683a11dbc6ad288d14824362?width=1200&format=jpeg",
+            "publishedAt": "2025-06-03T08:37:00Z",
+            "content": "A weeklong factory-wide shutdown at the Tesla factory in Austin featured training events for staffers who didn't take time off including one focusing on improving company culture.\r\nBusiness Insider o… [+2973 chars]"
+        }
+    ]
+}

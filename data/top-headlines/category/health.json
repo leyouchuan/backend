@@ -1,0 +1,136 @@
+{
+    "status": "ok",
+    "totalResults": 66,
+    "articles": [
+        {
+            "source": {
+                "id": "the-washington-post",
+                "name": "The Washington Post"
+            },
+            "author": "Dino Grandoni",
+            "title": "We finally may be able to rid the world of mosquitoes. But should we? - The Washington Post",
+            "description": "Gene editing holds the potential of suppressing mosquito species that carry deadly diseases — and raises ethical questions.",
+            "url": "https://www.washingtonpost.com/climate-environment/2025/06/03/mosquito-extinction-gene-editing-malaria/",
+            "urlToImage": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/AJGGJEUDDBH4NGSMTWDAGELQ6M.jpg&w=1440",
+            "publishedAt": "2025-06-03T12:03:42Z",
+            "content": "They buzz, they bite, and they cause some of the deadliest diseases known to humanity. Mosquitos are perhaps the planets most universally reviled animals.\r\nIf we could zap them off the face of the Ea… [+8009 chars]"
+        },
+        {
+            "source": {
+                "id": "axios",
+                "name": "Axios"
+            },
+            "author": "Maya Goldman",
+            "title": "Seniors' marijuana use reaches new high: study - Axios",
+            "description": "U.S. marijuana use among those 65 and older surged nearly 46% from 2021 to 2023.",
+            "url": "https://www.axios.com/2025/06/03/seniors-marijuana-use-increase",
+            "urlToImage": "https://images.axios.com/fDPDHK9aNC8sqGAt4OXWE8ToAi8=/0x0:1920x1080/1366x768/2025/06/03/1748911496553.jpg",
+            "publishedAt": "2025-06-03T09:41:53Z",
+            "content": "Older Americans are increasing their use of marijuana to a point where some geriatricians are warning about weed's attendant health risks. \r\nThe big picture: U.S. marijuana use among those 65 and old… [+2371 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "BBC News"
+            },
+            "author": "David Cox",
+            "title": "How your pets alter your immune system - BBC",
+            "description": "Living with animals is thought to have profound effects on our immunity – potentially reducing the risk of allergies, eczema and even autoimmune conditions.",
+            "url": "https://www.bbc.com/future/article/20250602-how-your-pets-alter-your-immune-system",
+            "urlToImage": "https://ychef.files.bbci.co.uk/624x351/p0lfyckb.jpg",
+            "publishedAt": "2025-06-03T09:01:03Z",
+            "content": "Living with animals is thought to have profound effects on our immunity potentially reducing the risk of allergies, eczema and even autoimmune conditions.\r\nSince they first emigrated from Central Eur… [+12003 chars]"
+        },
+        {
+            "source": {
+                "id": "nbc-news",
+                "name": "NBC News"
+            },
+            "author": "Erika Edwards",
+            "title": "An anti-inflammatory diet may help colon cancer patients live longer, study says - NBC News",
+            "description": "Eating food that lowers inflammation in the body may help people with advanced colon cancer survive longer, according to research presented at a meeting of the American Society of Clinical Oncology in Chicago.",
+            "url": "https://www.nbcnews.com/health/health-news/anti-inflammatory-diet-may-help-colon-cancer-patients-live-longer-stud-rcna209539",
+            "urlToImage": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2025-05/250530-plant-based-diet-salad-se-222p-b29a1b.jpg",
+            "publishedAt": "2025-06-03T09:00:00Z",
+            "content": "Eating food that lowers inflammation in the body may help people with advanced colon cancer survive longer,according to research presented at a meeting of the American Society of Clinical Oncology in… [+4038 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Newser"
+            },
+            "author": "Evann Gastaldo",
+            "title": "MIND Diet Could Lower Your Dementia Risk - Newser",
+            "description": "Study finds benefits even when diet starts in middle age",
+            "url": "https://www.newser.com/story/369627/mind-diet-could-lower-your-dementia-risk.html",
+            "urlToImage": "https://img2-azrcdn.newser.com/image/1614091-12-20250603033002.jpeg",
+            "publishedAt": "2025-06-03T08:00:00Z",
+            "content": "Like the Mediterranean diet, the MIND diet is rich in leafy greens, olive oil, and whole grains, but because of its focus on the brain, it gives special weight to foods like berries, which have been … [+1446 chars]"
+        },
+        {
+            "source": {
+                "id": "the-times-of-india",
+                "name": "The Times of India"
+            },
+            "author": "ETimes.in",
+            "title": "5 ways Diabetes impacts the eyes - Times of India",
+            "description": "Diabetes is a chronic condition where the body cannot regulate blood sugar levels. This occurs when the body either doesn't produce enough insulin, or can't properly use the insulin it produces, leading to high blood sugar. Diabetes affects almost all organs …",
+            "url": "https://timesofindia.indiatimes.com/life-style/health-fitness/health-news/5-ways-diabetes-impacts-the-eyes/photostory/121586225.cms",
+            "urlToImage": "https://static.toiimg.com/photo/121586244.cms",
+            "publishedAt": "2025-06-03T04:30:00Z",
+            "content": "Diabetic retinopathy is the most common eye disease caused by diabetes. It happens when high blood sugar damages the small blood vessels in the retina, the part of the eye that senses light and sends… [+459 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "ScienceAlert"
+            },
+            "author": "David Nield",
+            "title": "Leprosy Was Lurking in The Americas Long Before Colonization, Study Finds - ScienceAlert",
+            "description": "Historians have for a long time believed that leprosy was introduced to the Americas by European settlers, but the latest research offers strong evidence to the contrary – suggesting that Indigenous Americans had already been dying of the disease for centurie…",
+            "url": "https://www.sciencealert.com/leprosy-was-lurking-in-the-americas-long-before-colonization-study-finds",
+            "urlToImage": "https://www.sciencealert.com/images/2025/06/AncientTooth.jpg",
+            "publishedAt": "2025-06-03T03:41:16Z",
+            "content": "Historians have for a long time believed that leprosy was introduced to the Americas by European settlers, but the latest research offers strong evidence to the contrary suggesting that Indigenous Am… [+3188 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Earth.com"
+            },
+            "author": null,
+            "title": "New study shows that milk consumption improves gut biodiversity and cheese reduces certain microbes - Earth.com",
+            "description": "A Baylor College study reveals that dairy consumption increases beneficial gut bacteria, while cheese reduces other key bacteria.",
+            "url": "https://www.earth.com/news/new-study-shows-that-dairy-milk-cheese-consumption-improves-gut-biodiversity-health/",
+            "urlToImage": "https://cff2.earth.com/uploads/2025/06/02045134/milk-consumption-improves-gut-biodiversity-cheese-reduces-microbes.jpg",
+            "publishedAt": "2025-06-03T02:27:15Z",
+            "content": "Milk is a staple in many households. It has long been valued for nutrients like calcium and vitamin D, yet new data hint at another benefit that involves the intricate community of microbes inside th… [+4806 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "New York Post"
+            },
+            "author": "Fabiana Buontempo",
+            "title": "Texas woman died after rinsing sinuses with infected tap water — here’s how to keep yourself safe - New York Post",
+            "description": "The infection is rare but deadly.",
+            "url": "https://nypost.com/2025/06/02/lifestyle/texas-woman-died-after-rinsing-sinuses-with-infected-tap-water/",
+            "urlToImage": "https://nypost.com/wp-content/uploads/sites/2/2025/06/bacteria-comp.jpg?quality=75&strip=all&w=1024",
+            "publishedAt": "2025-06-03T01:42:00Z",
+            "content": "A 71-year-old woman reportedly contracted a brain infection from using tap water and died from it.\r\nRegardless of whether tap water is safe to consume where you live, experts advise against letting i… [+2405 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "KING5.com"
+            },
+            "author": "Quixem Ramirez",
+            "title": "New COVID-19 variant detected in Washington state, health officials say - KING5.com",
+            "description": "Health officials said it was unknown if the cases were people who live in Washington or visiting.",
+            "url": "https://www.king5.com/article/news/health/coronavirus/health-officials-new-covid-19-variant-washington-state/281-71938f69-49c4-4347-81d3-646db800cb2e",
+            "urlToImage": "https://media.king5.com/assets/KING/images/d6e3f0c2-869b-4803-8320-1c69a4c216d9/d6e3f0c2-869b-4803-8320-1c69a4c216d9_1140x641.jpg",
+            "publishedAt": "2025-06-02T23:26:00Z",
+            "content": "SEATTLE The Washington Department of Health (DOH) said Monday it has detected a new COVID-19 variant in the state.\r\nAccording to the DOH, health officials found 14 sequenced detections of NB.1.8.1 in… [+1121 chars]"
+        }
+    ]
+}
