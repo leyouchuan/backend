@@ -16,5 +16,3 @@ six==1.14.0
 tzlocal==2.0.0
 urllib3==1.25.11
 Werkzeug==1.0.1
-//fastapi
-//uvicorn

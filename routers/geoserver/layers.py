@@ -1,3 +1,4 @@
+#示例，如果导出图片用到geoserver或是数据存储用到数据库，这个接口就不必要。
 import requests
 from fastapi import APIRouter, HTTPException
 router = APIRouter()
@@ -6,7 +7,7 @@ GEOSERVER_URL = "http://localhost:8080/geoserver/rest/"
 GEOSERVER_USER = "admin"
 GEOSERVER_PASS = "geoserver"
 
-# 示例：预定义多底图信息（可改为动态从GeoServer获取）
+
 basemap_configs = [
     {
         "name": "low_res",
@@ -56,5 +57,3 @@ async def get_layers():
         return resp.json()
     else:
         raise HTTPException(status_code=resp.status_code, detail="获取GeoServer图层失败")
-
-# 你可以根据项目需求继续扩展接口，如新增发布底图接口、删除、修改等
