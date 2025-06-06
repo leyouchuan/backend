@@ -10,6 +10,7 @@ import requests
 from pydantic import BaseModel
 from routers.newsapi.filters import filter_by_category, filter_by_time, filter_all_by_time
 from typing import List, Optional
+import ast
 
 router = APIRouter()
 
@@ -30,7 +31,7 @@ patterns = [
 ]
 ruler.add_patterns(patterns)
 
-BAIDU_MAP_AK = "Nz5uCMPZeXyI85ETikbMEZ7tSraPlvZi"
+BAIDU_MAP_AK =ast.literal_eval(os.getenv("geocoding_api_key"))
 
 def geocode_location(location_name: str):
     """用百度地图API查询地名经纬度"""
