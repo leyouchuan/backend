@@ -23,10 +23,10 @@ patterns = [
     {"label": "GPE", "pattern": "U.S."},
     {"label": "GPE", "pattern": "USA"},
     {"label": "GPE", "pattern": "United States"},
-    {"label": "GPE", "pattern": "Donald Trump"},  # 映射到美国
-    {"label": "GPE", "pattern": [{"TEXT": {"REGEX": "U\\.S\\.?"}}]},  # U.S. 和 U.S
+    {"label": "GPE", "pattern": "Donald Trump"},
+    {"label": "GPE", "pattern": [{"TEXT": {"REGEX": "U\\.S\\.?"}}]},
     {"label": "NORP", "pattern": "European"},
-    # 你可以根据需要再添加更多模式
+
 ]
 ruler.add_patterns(patterns)
 
@@ -47,7 +47,7 @@ def geocode_location(location_name: str):
         return {"lat": location["lat"], "lng": location["lng"]}
     return None
 
-# 地名映射字典（后处理用，统一简称或特例）
+
 location_mapping = {
     "Donald Trump": "United States",
     "U.S.": "United States",
@@ -56,7 +56,6 @@ location_mapping = {
     "United States": "United States",
     "美国": "United States",
     "European": "Europe",
-    # 其他映射
 }
 
 class ArticlesModel(BaseModel):
