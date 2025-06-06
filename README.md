@@ -1,4 +1,3 @@
-
 # 接口文档 — `/news/locations/articles/with-location`
 
 ## 概述
@@ -84,3 +83,4 @@ GET /news/locations/articles/with-location?category=business&start_time=2025-05-
 * 时间格式要求严格遵守 ISO 8601 标准（示例：2025-05-01T00:00:00）。(待)
 * `category` 参数需要准确填写支持的类别名称。
 * 返回结果中某些字段（如 `description`, `urlToImage`）可能为null。
+* 下一步拟将地名识别和位置编码放到数据更新时，待待。
