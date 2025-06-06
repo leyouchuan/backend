@@ -4,6 +4,7 @@ import ast
 import time
 from datetime import datetime, timedelta, timezone
 from fastapi import APIRouter, HTTPException, Query
+from fastapi.responses import JSONResponse
 from newsapi import NewsApiClient
 from random import randrange
 from dotenv import load_dotenv
@@ -94,7 +95,8 @@ async def update_everything_api():
     update_everything()
     return {"status": "updated"}
 
-@router.get("/top-headlines/{category}")
+
+@router.get("/top-headlines/category/{category}")
 async def filter_by_category(category: str):
     """根据类别过滤头条新闻"""
     filepath = f"data/top-headlines/category/{category}.json"
@@ -121,57 +123,60 @@ async def filter_by_category(category: str):
 
     return {"totalResults": len(filtered_news), "articles": filtered_news}
 
-@router.get("/top-headlines/{category}/filter-by-time")
-async def filter_by_time(category: str, start_time: str = Query(...), end_time: str = Query(...)):
-    """根据时间过滤头条新闻"""
-    filepath = f"data/top-headlines/category/{category}.json"
-    try:
-        start_dt = datetime.fromisoformat(start_time).replace(tzinfo=timezone.utc)
-        end_dt = datetime.fromisoformat(end_time).replace(tzinfo=timezone.utc)
-    except Exception:
-        raise HTTPException(status_code=400, detail="Invalid time format")
+@router.get("/top-headlines/category/{category}/filter-by-time")
+async def filter_by_time(
+    category: str,
+    start_time_str: str = Query(..., description="开始时间，ISO格式"),
+    end_time_str: str = Query(..., description="结束时间，ISO格式")
+):
+    filepath = os.path.join("data", "top-headlines", "category", f"{category}.json")
 
     try:
-        with open(filepath, "r", encoding="utf-8") as f:
-            data = json.load(f)
-    except FileNotFoundError:
+        start_time = datetime.fromisoformat(start_time_str).replace(tzinfo=timezone.utc)
+        end_time = datetime.fromisoformat(end_time_str).replace(tzinfo=timezone.utc)
+    except Exception:
+        raise HTTPException(status_code=400, detail="输入时间格式错误")
+
+    if not os.path.isfile(filepath):
         raise HTTPException(status_code=404, detail="Data not found")
 
+    with open(filepath, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
     filtered_news = []
-    for news in data.get('articles', []):
-        pub_time = news.get('publishedAt')
+    for news in data.get("articles", []):
+        pub_time = news.get("publishedAt")
         if not pub_time:
             continue
         try:
             pub_time_obj = datetime.fromisoformat(pub_time.replace("Z", "+00:00"))
         except Exception:
             continue
-        if start_dt <= pub_time_obj <= end_dt:
+        if start_time <= pub_time_obj <= end_time:
             filtered_news.append(news)
 
-    return {"totalResults": len(filtered_news), "articles": filtered_news}
-
+    return JSONResponse(content={"totalResults": len(filtered_news), "articles": filtered_news})
 
 @router.get("/top-headlines/filter-all-by-time")
-async def filter_all_by_time(start_time: str = Query(...), end_time: str = Query(...)):
-    """根据时间过滤所有头条新闻"""
+async def filter_all_by_time(
+    start_time_str: str = Query(..., description="开始时间 ISO 格式"),
+    end_time_str: str = Query(..., description="结束时间 ISO 格式")
+):
     try:
-        start_dt = datetime.fromisoformat(start_time).replace(tzinfo=timezone.utc)
-        end_dt = datetime.fromisoformat(end_time).replace(tzinfo=timezone.utc)
+        start_time = datetime.fromisoformat(start_time_str).replace(tzinfo=timezone.utc)
+        end_time = datetime.fromisoformat(end_time_str).replace(tzinfo=timezone.utc)
     except Exception:
-        raise HTTPException(status_code=400, detail="Invalid time format")
+        raise HTTPException(status_code=400, detail="输入时间格式错误")
 
     filtered_news = []
+
     for category in CATEGORIES:
-        filepath = f"data/top-headlines/category/{category}.json"
-        print(f"Trying to open: {filepath}")  # Debugging line
-        try:
-            with open(filepath, "r", encoding="utf-8") as f:
-                data = json.load(f)
-                print(f"Loaded {len(data.get('articles', []))} articles from {filepath}")  # Debugging line
-        except FileNotFoundError:
-            print(f"File does not exist: {filepath}")  # Debugging line
+        filepath = os.path.join("data", "top-headlines", "category", f"{category}.json")
+        if not os.path.exists(filepath):
             continue
+
+        with open(filepath, "r", encoding="utf-8") as f:
+            data = json.load(f)
 
         for news in data.get("articles", []):
             pub_time_str = news.get("publishedAt")
@@ -181,38 +186,10 @@ async def filter_all_by_time(start_time: str = Query(...), end_time: str = Query
                 pub_time = datetime.fromisoformat(pub_time_str.replace("Z", "+00:00"))
             except Exception:
                 continue
-            
-            if start_dt <= pub_time <= end_dt:
+            if start_time <= pub_time <= end_time:
                 filtered_news.append(news)
 
-    return {"totalResults": len(filtered_news), "articles": filtered_news}
-    """根据时间过滤所有头条新闻"""
-    try:
-        start_dt = datetime.fromisoformat(start_time).replace(tzinfo=timezone.utc)
-        end_dt = datetime.fromisoformat(end_time).replace(tzinfo=timezone.utc)
-    except Exception:
-        raise HTTPException(status_code=400, detail="Invalid time format")
-
-    filtered_news = []
-    for category in CATEGORIES:
-        filepath = f"data/top-headlines/category/{category}.json"
-        try:
-            with open(filepath, "r", encoding="utf-8") as f:
-                data = json.load(f)
-        except FileNotFoundError:
-            continue
-        for news in data.get("articles", []):
-            pub_time_str = news.get("publishedAt")
-            if not pub_time_str:
-                continue
-            try:
-                pub_time = datetime.fromisoformat(pub_time_str.replace("Z", "+00:00"))
-            except Exception:
-                continue
-            if start_dt <= pub_time <= end_dt:
-                filtered_news.append(news)
-
-    return {"totalResults": len(filtered_news), "articles": filtered_news}
+    return JSONResponse(content={"totalResults": len(filtered_news), "articles": filtered_news})
 
 @router.get("/everything/{source}")
 async def get_everything(source: str):
