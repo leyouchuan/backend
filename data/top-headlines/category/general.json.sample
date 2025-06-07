@@ -1,0 +1,291 @@
+{
+    "status": "ok",
+    "totalResults": 428,
+    "articles": [
+        {
+            "source": {
+                "id": null,
+                "name": "BBC News"
+            },
+            "author": null,
+            "title": "Donald Trump's tariffs will hurt global growth, OECD warns - BBC",
+            "description": "The influential policy group lowers its forecast for the world's economy due to US trade barriers.",
+            "url": "https://www.bbc.com/news/articles/cq69j753egeo",
+            "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/f92b/live/12d30d50-4053-11f0-95b4-19782fc5d14e.jpg",
+            "publishedAt": "2025-06-03T12:21:16Z",
+            "content": "Dearbail JordanBusiness reporter, BBC News\r\nGlobal economic growth is set to be slower this year largely because of Donald Trump's US tariffs, according to a leading international policy group.\r\nWorl… [+3220 chars]",
+            "location": [
+                {
+                    "location": "美国",
+                    "lat": 39.72929108046181,
+                    "lng": 116.11203013582686
+                }
+            ]
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "CNBC"
+            },
+            "author": "Brandon Gomez",
+            "title": "Hims & Hers to acquire European telehealth platform in global expansion - CNBC",
+            "description": "Hims & Hers Health will acquire Zava, expanding the company's services to Ireland, France and Germany and growing its active customer base by roughly 50%.",
+            "url": "https://www.cnbc.com/2025/06/03/hims-hers-to-acquire-zava-european-telehealth-platform.html",
+            "urlToImage": "https://image.cnbcfm.com/api/v1/image/108107019-1740494267864-gettyimages-2198663532-HIMS__HERS.jpeg?v=1748895638&w=1920&h=1080",
+            "publishedAt": "2025-06-03T11:00:01Z",
+            "content": "Hims &amp; Hers Health announced Tuesday it will acquire European telehealth platform Zava in its push to expand globally.\r\n\"We're excited to take this moment to really accelerate both the European e… [+2615 chars]",
+            "location": [
+                {
+                    "location": "德国",
+                    "lat": 31.193973873342962,
+                    "lng": 121.23051447572041
+                },
+                {
+                    "location": "爱尔兰",
+                    "lat": 39.916512344209124,
+                    "lng": 116.45374123995602
+                },
+                {
+                    "location": "法国",
+                    "lat": 24.4830348131684,
+                    "lng": 118.13112051278412
+                },
+                {
+                    "location": "欧洲",
+                    "lat": 39.91105841075915,
+                    "lng": 116.64664067025215
+                }
+            ]
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "NPR"
+            },
+            "author": "",
+            "title": "Can bringing back manufacturing help the heartland catch up with 'superstar' cities? : Planet Money - NPR",
+            "description": "In recent decades, America has seen economic opportunities concentrated in superstar cities. Manufacturing boosters hope reshoring factories could help change that. We look at the theory and evidence.",
+            "url": "https://www.npr.org/sections/planet-money/2025/06/03/g-s1-70167/can-bringing-back-manufacturing-help-the-heartland-catch-up-with-superstar-cities",
+            "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/4000x2250+0+206/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fb0%2F55%2F6492befb41f988a070d519fb1beb%2Fgettyimages-2216884032.jpg",
+            "publishedAt": "2025-06-03T10:30:00Z",
+            "content": "This is Part 3 in our Planet Money newsletter series on manufacturing in America. Part 1\r\n asked why Americans aren't filling the manufacturing jobs that are already here. Part 2\r\n dived deep into ec… [+15349 chars]",
+            "location": [
+                {
+                    "location": "美国",
+                    "lat": 39.72929108046181,
+                    "lng": 116.11203013582686
+                }
+            ]
+        },
+        {
+            "source": {
+                "id": "nbc-news",
+                "name": "NBC News"
+            },
+            "author": "Shannon Pettypiece, Rob Wile",
+            "title": "Trump's ambitious push for trade deals is hitting some snags - NBC News",
+            "description": "President Donald Trump’s ambitious plan to broker dozens of trade deals with some of the United States’ closest trading partners has begun to show cracks as the clock on his 90-day pause for most country-specific tariffs winds down to just over one month.",
+            "url": "https://www.nbcnews.com/business/economy/trump-tariff-trade-deals-where-negotiations-stand-now-what-to-know-rcna210051",
+            "urlToImage": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2025-06/250603-port-los-angeles-mb-1158-7f1f56.jpg",
+            "publishedAt": "2025-06-03T09:00:00Z",
+            "content": "Its going to be a long, drawn-out negotiation, said Warren Maruyama, who worked on trade deals during the George W. Bush administration as general counsel for the Office of the U.S. Trade Representat… [+6725 chars]",
+            "location": [
+                {
+                    "location": "美国",
+                    "lat": 39.72929108046181,
+                    "lng": 116.11203013582686
+                }
+            ]
+        },
+        {
+            "source": {
+                "id": "politico",
+                "name": "Politico"
+            },
+            "author": "Sally Goldenberg",
+            "title": "Cuomo, reportedly under probe by Trump’s DOJ, wants to organize Dems nationally - Politico",
+            "description": "The New York City mayoral frontrunner discussed his strategy during a sit-down with POLITICO last week.",
+            "url": "https://www.politico.com/news/2025/06/03/cuomo-reportedly-under-probe-by-trumps-doj-wants-to-organize-dems-nationally-00381794",
+            "urlToImage": "https://static.politico.com/21/c6/891c2a3248b3aa8642fc90086726/ap25114060390764.jpg",
+            "publishedAt": "2025-06-03T09:00:00Z",
+            "content": "Youre going to have to be a spokesperson, advocate, organizer, he added. This is what Medicaid means in Mississippi, this is what Medicaid means in Texas. And you organize that, they dont have a lot … [+5408 chars]",
+            "location": [
+                {
+                    "location": "纽约",
+                    "lat": 40.7128,
+                    "lng": -74.006
+                }
+            ]
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "NPR"
+            },
+            "author": "",
+            "title": "With steel tariffs doubling today, a North Carolina manufacturer wonders how to compete - NPR",
+            "description": "President Trump is doubling tariffs on steel and aluminum to 50%. It's designed to protect domestic steel and aluminum workers, but critics say it will raise prices for those that use the metals.",
+            "url": "https://www.npr.org/2025/06/04/nx-s1-5422248/trump-steel-aluminum-50-tariffs-double-prices",
+            "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/4000x2250+0+209/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F83%2F7c%2Fa4167e9d4c2fa89c9fb18a0898ea%2Fgettyimages-2217166530.jpg",
+            "publishedAt": "2025-06-04T09:00:00Z",
+            "content": "President Trump is doubling down on steel and aluminum tariffs.\r\nStarting today, the tax on imported metals is set to jump to 50%, twice what it was yesterday. \r\nThe president announced the latest tr… [+4322 chars]",
+            "location": [
+                {
+                    "location": "南卡罗来纳州",
+                    "lat": 22.15270774904575,
+                    "lng": 112.27953865999947
+                }
+            ]
+        },
+        {
+            "source": {
+                "id": "the-washington-post",
+                "name": "The Washington Post"
+            },
+            "author": "Marianne LeVine, María Luisa Paúl, Maria Sacchetti",
+            "title": "Family of Boulder suspect taken into ICE custody for expedited removal, U.S. says - The Washington Post",
+            "description": "The White House said Mohamed Sabry Soliman’s family had been detained following Sunday’s attack against a Jewish group in Boulder and would be swiftly deported.",
+            "url": "https://www.washingtonpost.com/immigration/2025/06/03/mohamed-sabry-soliman-family-ice-custody/",
+            "urlToImage": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/TQGBJIPYALME4EVLYUNBNL6RKA.JPG&w=1440",
+            "publishedAt": "2025-06-04T06:37:56Z",
+            "content": "Federal authorities said Tuesday that they had taken into custody the family of the man accused of injuring at least a dozen people at a Colorado demonstration to support Israeli hostages in Gaza and… [+6820 chars]",
+            "location": [
+                {
+                    "location": "美国",
+                    "lat": 39.72929108046181,
+                    "lng": 116.11203013582686
+                }
+            ]
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Post Magazine"
+            },
+            "author": null,
+            "title": "‘Getting seriously worse’: EU firms sound alarm over China’s rare earth curbs - South China Morning Post",
+            "description": "Influential European lobby group says it senses Beijing is overwhelmed with applications to export the highly sought-after minerals.",
+            "url": "https://www.scmp.com/news/china/diplomacy/article/3312953/eu-industry-could-grind-halt-over-chinas-rare-earth-restrictions",
+            "urlToImage": "https://cdn.i-scmp.com/sites/default/files/styles/og_image_scmp_generic/public/d8/images/canvas/2025/06/04/f89d9b8e-6885-4b9b-af4e-a05c013d84ba_5076b3b3.jpg?itok=XgTck7I4&v=1748988518",
+            "publishedAt": "2025-06-04T05:44:03Z",
+            "content": "The measures announced by Beijing on April 4 were seen as retaliation against US President Donald Trumps reciprocal tariffs, but European industry now warns it is being caught in the crossfire.\r\nThe … [+864 chars]",
+            "location": [
+                {
+                    "location": "中国",
+                    "lat": 39.9042,
+                    "lng": 116.4074
+                },
+                {
+                    "location": "Beijing",
+                    "lat": 39.983419075595,
+                    "lng": 116.37355301047177
+                },
+                {
+                    "location": "欧洲",
+                    "lat": 39.91105841075915,
+                    "lng": 116.64664067025215
+                }
+            ]
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "BBC News"
+            },
+            "author": null,
+            "title": "South Korea: New leader Lee Jae-myung pledges to 'unite' a divided country - BBC",
+            "description": "Experts say he faces a challenging task, as division and discontentment continue to rack South Korea.",
+            "url": "https://www.bbc.com/news/articles/cq549p1yd2eo",
+            "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/9fff/live/7cff6fe0-40ec-11f0-85b9-27e092bd52de.jpg",
+            "publishedAt": "2025-06-04T05:15:57Z",
+            "content": "Yvette Tan\r\nKoh Ewe\r\nJust hours after winning the South Korean presidency, Lee Jae-myung has pledged to \"unite the people\" in his inauguration speech on Wednesday.\r\nThe 61-year-old won a snap electio… [+5498 chars]",
+            "location": [
+                {
+                    "location": "韩国",
+                    "lat": 31.011230800211305,
+                    "lng": 121.2385801812334
+                }
+            ]
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Deadline"
+            },
+            "author": "Dominic Patten",
+            "title": "Sean “Diddy” Combs’ Faces New Accuser “Jane” Wednesday; Trial Dominated Today By $100K Payment For “Only Copy” Of 2016 LA Hotel Footage Of Cassie Ventura Beating - Deadline",
+            "description": "With another rape accuser set to testify Weds, Sean Combs trial today was dominated with talk of the $100K he paid to bury a damning 2016 hotel video",
+            "url": "http://deadline.com/2025/06/diddy-trial-cassie-beating-video-payoff-1236421768/",
+            "urlToImage": "https://deadline.com/wp-content/uploads/2025/03/Sean-‘Diddy-Combs-physically-assaulting-Cassie-Ventura-in-2016.jpg?w=1024",
+            "publishedAt": "2025-06-04T01:30:00Z",
+            "content": "Sean “Diddy” Combs paid big bucks and had everyone sign punishing non-disclosure agreements to obtain what he believed was the “only copy” of video showing him beating and kicking then girlfriend Cas… [+7511 chars]",
+            "location": [
+                {
+                    "location": "Sean",
+                    "lat": 28.647423548719892,
+                    "lng": 121.28115777915251
+                }
+            ]
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "SamMobile"
+            },
+            "author": "Asif Iqbal Shaik",
+            "title": "Samsung confirms the Galaxy Z Fold 7 will bring bigger cover and foldable displays - SamMobile",
+            "description": "On Tuesday, we reported that Samsung is rolling out a software update to the Galaxy Buds 2 Pro. Well, as it turns out, the South Korean tech giant has released a software update to its sibling as well, the Galaxy Buds 2. According to the change log, the softw…",
+            "url": "https://www.sammobile.com/news/galaxy-buds-2-stability-improving-software-update/",
+            "urlToImage": "https://www.sammobile.com/wp-content/uploads/2025/03/Qualcomm.jpg",
+            "publishedAt": "2025-06-03T23:03:45Z",
+            "content": "Qualcomm has unveiled a new Snapdragon processor for premium mid-range phones. It is called the Snapdragon 7 Gen 4 (SM7750-AB), and it brings huge improvements in performance, thanks to a faster CPU,… [+2738 chars]",
+            "location": [
+                {
+                    "location": "韩国",
+                    "lat": 31.011230800211305,
+                    "lng": 121.2385801812334
+                }
+            ]
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "GamesIndustry.biz"
+            },
+            "author": "Vikki Blake",
+            "title": "Major US retailers cancel Nintendo Switch 2 pre-orders - GamesIndustry.biz",
+            "description": "Major retailers in the US have started contacting customers to inform them their Nintendo Switch 2 pre-orders have been…",
+            "url": "https://www.gamesindustry.biz/major-us-retailers-cancel-nintendo-switch-2-pre-orders",
+            "urlToImage": "https://assetsio.gnwcdn.com/NintendoSwitch2_16x9_KeyArt.jpg?width=1200&height=630&fit=crop&enable=upscale&auto=webp",
+            "publishedAt": "2025-06-03T21:58:03Z",
+            "content": "Major retailers in the US have started contacting customers to inform them their Nintendo Switch 2 pre-orders have been canceled just days ahead of the console's formal release.\r\nDozensofposts have a… [+1387 chars]",
+            "location": [
+                {
+                    "location": "美国",
+                    "lat": 39.72929108046181,
+                    "lng": 116.11203013582686
+                }
+            ]
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Neurosciencenews.com"
+            },
+            "author": "Neuroscience News",
+            "title": "Cannabis Use Among U.S. Seniors Has Surged 46% in Just Two Years - Neuroscience News",
+            "description": "Marijuana use among U.S. adults aged 65 and older has climbed to a record 7%, up nearly 46% from 2021 to 2023.",
+            "url": "https://neurosciencenews.com/cannabis-use-aging-29195/",
+            "urlToImage": "https://neurosciencenews.com/files/2025/06/aging-cannabis-neurosicnce.jpg",
+            "publishedAt": "2025-06-03T14:25:13Z",
+            "content": "Summary: Marijuana use among U.S. adults aged 65 and older has climbed to a record 7%, up nearly 46% from 2021 to 2023. The trend is especially pronounced among college-educated, married, and higher-… [+5909 chars]",
+            "location": [
+                {
+                    "location": "美国",
+                    "lat": 39.72929108046181,
+                    "lng": 116.11203013582686
+             }
+            ]
+        }
+    ]
+}

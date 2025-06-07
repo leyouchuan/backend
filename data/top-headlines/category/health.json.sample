@@ -1,0 +1,156 @@
+{
+    "status": "ok",
+    "totalResults": 376,
+    "articles": [
+        {
+            "source": {
+                "id": "axios",
+                "name": "Axios"
+            },
+            "author": "Maya Goldman",
+            "title": "Seniors' marijuana use reaches new high: study - Axios",
+            "description": "U.S. marijuana use among those 65 and older surged nearly 46% from 2021 to 2023.",
+            "url": "https://www.axios.com/2025/06/03/seniors-marijuana-use-increase",
+            "urlToImage": "https://images.axios.com/fDPDHK9aNC8sqGAt4OXWE8ToAi8=/0x0:1920x1080/1366x768/2025/06/03/1748911496553.jpg",
+            "publishedAt": "2025-06-03T09:41:53Z",
+            "content": "Older Americans are increasing their use of marijuana to a point where some geriatricians are warning about weed's attendant health risks. \r\nThe big picture: U.S. marijuana use among those 65 and old… [+2371 chars]",
+            "location": [
+                {
+                    "location": "美国",
+                    "lat": 39.72929108046181,
+                    "lng": 116.11203013582686
+                }
+            ]
+        },
+        {
+            "source": {
+                "id": "nbc-news",
+                "name": "NBC News"
+            },
+            "author": "Erika Edwards",
+            "title": "An anti-inflammatory diet may help colon cancer patients live longer, study says - NBC News",
+            "description": "Eating food that lowers inflammation in the body may help people with advanced colon cancer survive longer, according to research presented at a meeting of the American Society of Clinical Oncology in Chicago.",
+            "url": "https://www.nbcnews.com/health/health-news/anti-inflammatory-diet-may-help-colon-cancer-patients-live-longer-stud-rcna209539",
+            "urlToImage": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2025-05/250530-plant-based-diet-salad-se-222p-b29a1b.jpg",
+            "publishedAt": "2025-06-03T09:00:00Z",
+            "content": "Eating food that lowers inflammation in the body may help people with advanced colon cancer survive longer,according to research presented at a meeting of the American Society of Clinical Oncology in… [+4038 chars]",
+            "location": [
+                {
+                    "location": "芝加哥",
+                    "lat": 36.08487665863095,
+                    "lng": 120.00938850784372
+                }
+            ]
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "ScienceAlert"
+            },
+            "author": "David Nield",
+            "title": "Leprosy Was Lurking in The Americas Long Before Colonization, Study Finds - ScienceAlert",
+            "description": "Historians have for a long time believed that leprosy was introduced to the Americas by European settlers, but the latest research offers strong evidence to the contrary – suggesting that Indigenous Americans had already been dying of the disease for centurie…",
+            "url": "https://www.sciencealert.com/leprosy-was-lurking-in-the-americas-long-before-colonization-study-finds",
+            "urlToImage": "https://www.sciencealert.com/images/2025/06/AncientTooth.jpg",
+            "publishedAt": "2025-06-03T03:41:16Z",
+            "content": "Historians have for a long time believed that leprosy was introduced to the Americas by European settlers, but the latest research offers strong evidence to the contrary suggesting that Indigenous Am… [+3188 chars]",
+            "location": [
+                {
+                    "location": "美国",
+                    "lat": 39.72929108046181,
+                    "lng": 116.11203013582686
+                },
+                {
+                    "location": "欧洲",
+                    "lat": 39.91105841075915,
+                    "lng": 116.64664067025215
+                }
+            ]
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "KING5.com"
+            },
+            "author": "Quixem Ramirez",
+            "title": "New COVID-19 variant detected in Washington state, health officials say - KING5.com",
+            "description": "Health officials said it was unknown if the cases were people who live in Washington or visiting.",
+            "url": "https://www.king5.com/article/news/health/coronavirus/health-officials-new-covid-19-variant-washington-state/281-71938f69-49c4-4347-81d3-646db800cb2e",
+            "urlToImage": "https://media.king5.com/assets/KING/images/d6e3f0c2-869b-4803-8320-1c69a4c216d9/d6e3f0c2-869b-4803-8320-1c69a4c216d9_1140x641.jpg",
+            "publishedAt": "2025-06-02T23:26:00Z",
+            "content": "SEATTLE The Washington Department of Health (DOH) said Monday it has detected a new COVID-19 variant in the state.\r\nAccording to the DOH, health officials found 14 sequenced detections of NB.1.8.1 in… [+1121 chars]",
+            "location": [
+                {
+                    "location": "华盛顿",
+                    "lat": 35.598379858272615,
+                    "lng": 115.93805620601493
+                },
+                {
+                    "location": "纽约",
+                    "lat": 34.76080991100278,
+                    "lng": 113.67429407170269
+                }
+            ]
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Phys.Org"
+            },
+            "author": "University of California - San Diego",
+            "title": "Most freshwater game fish in Southern California carry invasive parasites capable of infecting humans, study finds - Phys.org",
+            "description": "More than 90% of popular freshwater game fish in Southern California contain an introduced parasite capable of infecting humans, according to a new study by researchers at UC San Diego's Scripps Institution of Oceanography.",
+            "url": "https://phys.org/news/2025-06-freshwater-game-fish-southern-california.html",
+            "urlToImage": "https://scx2.b-cdn.net/gfx/news/2025/freshwater-fish-in-us.jpg",
+            "publishedAt": "2025-06-03T19:19:21Z",
+            "content": "More than 90% of popular freshwater game fish in Southern California contain an introduced parasite capable of infecting humans, according to a new study by researchers at UC San Diego's Scripps Inst… [+5939 chars]",
+            "location": [
+                {
+                    "location": "美国",
+                    "lat": 39.72929108046181,
+                    "lng": 116.11203013582686
+                }
+            ]
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Simple Flying"
+            },
+            "author": "Peter Hanson",
+            "title": "Remarkable Rescue: Houston Handles Turkish Airlines Diversion After Passenger Suffers Stroke - Simple Flying",
+            "description": "A Turkish Airlines 787-9 Dreamliner diverted to Houston after a passenger had a stroke onboard.",
+            "url": "https://simpleflying.com/houston-turkish-airlines-diversion-passenger-stroke/",
+            "urlToImage": "https://static1.simpleflyingimages.com/wordpress/wp-content/uploads/2025/06/shutterstock_2562014663.jpg",
+            "publishedAt": "2025-06-03T18:00:00Z",
+            "content": "A 35-year-old woman on a Turkish Airlines flight from Istanbul Airport (IST) to Mexico City International Airport (MEX) suffered a stroke midair over the Atlantic. Thanks to the timely intervention o… [+3962 chars]",
+            "location": [
+                {
+                    "location": "休斯顿",
+                    "lat": 39.08527120437557,
+                    "lng": 117.21465433574377
+                }
+            ]
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Neurosciencenews.com"
+            },
+            "author": "Neuroscience News",
+            "title": "Cannabis Use Among U.S. Seniors Has Surged 46% in Just Two Years - Neuroscience News",
+            "description": "Marijuana use among U.S. adults aged 65 and older has climbed to a record 7%, up nearly 46% from 2021 to 2023.",
+            "url": "https://neurosciencenews.com/cannabis-use-aging-29195/",
+            "urlToImage": "https://neurosciencenews.com/files/2025/06/aging-cannabis-neurosicnce.jpg",
+            "publishedAt": "2025-06-03T14:25:13Z",
+            "content": "Summary: Marijuana use among U.S. adults aged 65 and older has climbed to a record 7%, up nearly 46% from 2021 to 2023. The trend is especially pronounced among college-educated, married, and higher-… [+5909 chars]",
+            "location": [
+                {
+                    "location": "美国",
+                    "lat": 39.72929108046181,
+                    "lng": 116.11203013582686
+             }
+            ]
+        }
+    ]
+}
