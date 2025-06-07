@@ -10,6 +10,7 @@ from random import randrange
 from dotenv import load_dotenv
 from apscheduler.schedulers.background import BackgroundScheduler
 import atexit
+from routers.newsapi.utiles import add_location_info
 
 load_dotenv()
 
@@ -35,28 +36,28 @@ def get_key():
     return API_KEYS[LAST_KEY_INDEX]
 
 def save_to_json(filename, new_content):
-    """将内容追加到 JSON 文件"""
-    # 初始化数据变量
+    filtered_articles = add_location_info(new_content['articles'])
+
+    if not filtered_articles:
+        print("No articles with location found, nothing to save.")
+        return
+
     data = {"status": "ok", "totalResults": 0, "articles": []}
-    
-    # 尝试读取已有的数据
+
     if os.path.exists(filename):
-        with open(filename, "r", encoding='utf-8') as f:
+        with open(filename, "r", encoding="utf-8") as f:
             try:
-                # 读取已存在的文件数据
                 data = json.load(f)
             except json.JSONDecodeError:
-                print(f"Warning: {filename} is empty or corrupted. Starting with new data.")
-    
-    # 追加新数据
-    data['articles'].extend(new_content['articles'])
-    data['totalResults'] = len(data['articles'])
-    
-    # 保存更新后的数据
+                print(f"{filename} is empty or corrupted, reinitializing.")
+
+    data["articles"].extend(filtered_articles)
+    data["totalResults"] = len(data["articles"])
+
     os.makedirs(os.path.dirname(filename), exist_ok=True)
-    with open(filename, "w", encoding='utf-8') as f:
+    with open(filename, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
-    print(f"Updated and saved to {filename} with total results: {data['totalResults']}.")
+    print(f"Saved {len(filtered_articles)} articles with location to {filename}.")
 
 def update_top_headline():
     """更新头条新闻"""
@@ -98,9 +99,9 @@ async def update_everything_api():
 
 # Scheduler setup
 scheduler = BackgroundScheduler()
-#INTERVAL = 1  # 每分钟运行一次
-#cheduler.add_job(func=update_top_headline, trigger="interval", minutes=INTERVAL)
-#cheduler.add_job(func=update_everything, trigger="interval", minutes=INTERVAL)
+INTERVAL = 1  # 每分钟运行一次
+scheduler.add_job(func=update_top_headline, trigger="interval", minutes=INTERVAL)
+scheduler.add_job(func=update_everything, trigger="interval", minutes=INTERVAL)
 #每日五点更新：
 
 if not scheduler.running:
