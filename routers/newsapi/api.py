@@ -10,6 +10,7 @@ from random import randrange
 from dotenv import load_dotenv
 from apscheduler.schedulers.background import BackgroundScheduler
 import atexit
+from routers.newsapi.utiles import add_location_info
 
 load_dotenv()
 
@@ -29,37 +30,35 @@ API_KEYS = ast.literal_eval(os.getenv("API_KEYS"))
 LAST_KEY_INDEX = randrange(0, len(API_KEYS))
 
 def get_key():
-    """获取下一个 API 密钥"""
     global LAST_KEY_INDEX
     LAST_KEY_INDEX = (LAST_KEY_INDEX + 1) % len(API_KEYS)
     return API_KEYS[LAST_KEY_INDEX]
 
 def save_to_json(filename, new_content):
-    """将内容追加到 JSON 文件"""
-    # 初始化数据变量
+    filtered_articles = add_location_info(new_content['articles'])
+
+    if not filtered_articles:
+        print("No articles with location found, nothing to save.")
+        return
+
     data = {"status": "ok", "totalResults": 0, "articles": []}
-    
-    # 尝试读取已有的数据
+
     if os.path.exists(filename):
-        with open(filename, "r", encoding='utf-8') as f:
+        with open(filename, "r", encoding="utf-8") as f:
             try:
-                # 读取已存在的文件数据
                 data = json.load(f)
             except json.JSONDecodeError:
-                print(f"Warning: {filename} is empty or corrupted. Starting with new data.")
-    
-    # 追加新数据
-    data['articles'].extend(new_content['articles'])
-    data['totalResults'] = len(data['articles'])
-    
-    # 保存更新后的数据
+                print(f"{filename} is empty or corrupted, reinitializing.")
+
+    data["articles"].extend(filtered_articles)
+    data["totalResults"] = len(data["articles"])
+
     os.makedirs(os.path.dirname(filename), exist_ok=True)
-    with open(filename, "w", encoding='utf-8') as f:
+    with open(filename, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
-    print(f"Updated and saved to {filename} with total results: {data['totalResults']}.")
+    print(f"Saved {len(filtered_articles)} articles with location to {filename}.")
 
 def update_top_headline():
-    """更新头条新闻"""
     for category in CATEGORIES:
         for country in COUNTRIES_LANGUAGES:
             print(f"Started updating category: {category} country: {country} at: {time.strftime('%A, %d. %B %Y %I:%M:%S %p')}")
@@ -69,7 +68,6 @@ def update_top_headline():
     print("Top headlines updated.")
 
 def update_everything():
-    """更新所有相关新闻"""
     newsapi = NewsApiClient(api_key=get_key())
     for source in SOURCES:
         print(f"Started updating source: {source} at: {time.strftime('%A, %d. %B %Y %I:%M:%S %p')}")
@@ -85,128 +83,20 @@ def update_everything():
 
 @router.get("/top-headlines/update")
 async def update_top_headline_api():
-    """API 路由：更新头条新闻"""
     update_top_headline()
     return {"status": "updated"}
 
 @router.get("/everything/update")
 async def update_everything_api():
-    """API 路由：更新所有相关新闻"""
     update_everything()
     return {"status": "updated"}
 
 
-@router.get("/top-headlines/category/{category}")
-async def filter_by_category(category: str):
-    """根据类别过滤头条新闻"""
-    filepath = f"data/top-headlines/category/{category}.json"
-    try:
-        with open(filepath, "r", encoding="utf-8") as f:
-            data = json.load(f)
-    except FileNotFoundError:
-        raise HTTPException(status_code=404, detail="Data not found")
-
-    now = datetime.now(timezone.utc)
-    past_day = now - timedelta(days=2)
-
-    filtered_news = []
-    for news in data.get('articles', []):
-        pub_time_str = news.get('publishedAt')
-        if not pub_time_str:
-            continue
-        try:
-            pub_time = datetime.fromisoformat(pub_time_str.replace("Z", "+00:00"))
-        except Exception:
-            continue
-        if past_day <= pub_time <= now:
-            filtered_news.append(news)
-
-    return {"totalResults": len(filtered_news), "articles": filtered_news}
-
-@router.get("/top-headlines/category/{category}/filter-by-time")
-async def filter_by_time(
-    category: str,
-    start_time_str: str = Query(..., description="开始时间，ISO格式"),
-    end_time_str: str = Query(..., description="结束时间，ISO格式")
-):
-    filepath = os.path.join("data", "top-headlines", "category", f"{category}.json")
-
-    try:
-        start_time = datetime.fromisoformat(start_time_str).replace(tzinfo=timezone.utc)
-        end_time = datetime.fromisoformat(end_time_str).replace(tzinfo=timezone.utc)
-    except Exception:
-        raise HTTPException(status_code=400, detail="输入时间格式错误")
-
-    if not os.path.isfile(filepath):
-        raise HTTPException(status_code=404, detail="Data not found")
-
-    with open(filepath, "r", encoding="utf-8") as f:
-        data = json.load(f)
-
-    filtered_news = []
-    for news in data.get("articles", []):
-        pub_time = news.get("publishedAt")
-        if not pub_time:
-            continue
-        try:
-            pub_time_obj = datetime.fromisoformat(pub_time.replace("Z", "+00:00"))
-        except Exception:
-            continue
-        if start_time <= pub_time_obj <= end_time:
-            filtered_news.append(news)
-
-    return JSONResponse(content={"totalResults": len(filtered_news), "articles": filtered_news})
-
-@router.get("/top-headlines/filter-all-by-time")
-async def filter_all_by_time(
-    start_time_str: str = Query(..., description="开始时间 ISO 格式"),
-    end_time_str: str = Query(..., description="结束时间 ISO 格式")
-):
-    try:
-        start_time = datetime.fromisoformat(start_time_str).replace(tzinfo=timezone.utc)
-        end_time = datetime.fromisoformat(end_time_str).replace(tzinfo=timezone.utc)
-    except Exception:
-        raise HTTPException(status_code=400, detail="输入时间格式错误")
-
-    filtered_news = []
-
-    for category in CATEGORIES:
-        filepath = os.path.join("data", "top-headlines", "category", f"{category}.json")
-        if not os.path.exists(filepath):
-            continue
-
-        with open(filepath, "r", encoding="utf-8") as f:
-            data = json.load(f)
-
-        for news in data.get("articles", []):
-            pub_time_str = news.get("publishedAt")
-            if not pub_time_str:
-                continue
-            try:
-                pub_time = datetime.fromisoformat(pub_time_str.replace("Z", "+00:00"))
-            except Exception:
-                continue
-            if start_time <= pub_time <= end_time:
-                filtered_news.append(news)
-
-    return JSONResponse(content={"totalResults": len(filtered_news), "articles": filtered_news})
-
-@router.get("/everything/{source}")
-async def get_everything(source: str):
-    """获取特定来源的所有文章"""
-    filepath = f"data/everything/{source}.json"
-    try:
-        with open(filepath, "r", encoding="utf-8") as f:
-            data = json.load(f)
-        return data
-    except FileNotFoundError:
-        raise HTTPException(status_code=404, detail="Data not found")
-
 # Scheduler setup
 scheduler = BackgroundScheduler()
-#INTERVAL = 1  # 每分钟运行一次
-#cheduler.add_job(func=update_top_headline, trigger="interval", minutes=INTERVAL)
-#cheduler.add_job(func=update_everything, trigger="interval", minutes=INTERVAL)
+INTERVAL = 1  # 每分钟运行一次
+scheduler.add_job(func=update_top_headline, trigger="interval", minutes=INTERVAL)
+scheduler.add_job(func=update_everything, trigger="interval", minutes=INTERVAL)
 #每日五点更新：
 
 if not scheduler.running:
