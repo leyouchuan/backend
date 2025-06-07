@@ -30,7 +30,6 @@ API_KEYS = ast.literal_eval(os.getenv("API_KEYS"))
 LAST_KEY_INDEX = randrange(0, len(API_KEYS))
 
 def get_key():
-    """获取下一个 API 密钥"""
     global LAST_KEY_INDEX
     LAST_KEY_INDEX = (LAST_KEY_INDEX + 1) % len(API_KEYS)
     return API_KEYS[LAST_KEY_INDEX]
@@ -60,7 +59,6 @@ def save_to_json(filename, new_content):
     print(f"Saved {len(filtered_articles)} articles with location to {filename}.")
 
 def update_top_headline():
-    """更新头条新闻"""
     for category in CATEGORIES:
         for country in COUNTRIES_LANGUAGES:
             print(f"Started updating category: {category} country: {country} at: {time.strftime('%A, %d. %B %Y %I:%M:%S %p')}")
@@ -70,7 +68,6 @@ def update_top_headline():
     print("Top headlines updated.")
 
 def update_everything():
-    """更新所有相关新闻"""
     newsapi = NewsApiClient(api_key=get_key())
     for source in SOURCES:
         print(f"Started updating source: {source} at: {time.strftime('%A, %d. %B %Y %I:%M:%S %p')}")
@@ -86,13 +83,11 @@ def update_everything():
 
 @router.get("/top-headlines/update")
 async def update_top_headline_api():
-    """API 路由：更新头条新闻"""
     update_top_headline()
     return {"status": "updated"}
 
 @router.get("/everything/update")
 async def update_everything_api():
-    """API 路由：更新所有相关新闻"""
     update_everything()
     return {"status": "updated"}
 
