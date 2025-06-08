@@ -15,7 +15,7 @@ import numpy as np
 plt.rcParams["font.family"] = ["SimHei", "WenQuanYi Micro Hei", "Heiti TC"]
 plt.rcParams["axes.unicode_minus"] = False  # 解决负号显示问题
 
-app = FastAPI(title="新闻地理统计图表API")
+router = APIRouter()
 
 # 数据模型
 class Location(BaseModel):
