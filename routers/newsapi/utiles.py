@@ -7,6 +7,9 @@ import requests
 import time
 from random import randrange
 from fuzzywuzzy import process
+import aiohttp
+import asyncio
+
 
 nlp = spacy.load("en_core_web_sm")
 ruler = nlp.add_pipe("entity_ruler", before="ner")
@@ -55,11 +58,11 @@ def smart_map_location(raw_location_name):
     print(f"警告: 地名 '{raw_location_name}' 未匹配，建议加入映射表")
     return raw_location_name
 
-def geocode_location(location_name: str):
+async def geocode_location(session, location_name: str):
     if location_name in manual_coords_mapping:
         print(f"使用手动经纬度: {location_name}")
         return manual_coords_mapping[location_name]
-    
+
     url = "http://api.map.baidu.com/geocoding/v3/"
     params = {
         "address": location_name,
@@ -67,41 +70,44 @@ def geocode_location(location_name: str):
         "ak": get_key(),
     }
     print(f"Geocoding location: {location_name}")
-    time.sleep(1)
+    await asyncio.sleep(1)  # 异步等待，避免封锁
     try:
-        resp = requests.get(url, params=params, timeout=5)
-        data = resp.json()
-        if data.get("status") == 0:
-            loc = data["result"]["location"]
-            return {"lat": loc["lat"], "lng": loc["lng"]}
-        else:
-            print(f"百度地图API返回错误状态: {data.get('msg', '无错误信息')}")
+        async with session.get(url, params=params, timeout=5) as resp:
+            data = await resp.json()
+            if data.get("status") == 0:
+                loc = data["result"]["location"]
+                return {"lat": loc["lat"], "lng": loc["lng"]}
+            else:
+                print(f"百度地图API返回错误状态: {data.get('msg', '无错误信息')}")
     except Exception as e:
         print(f"请求错误: {e}")
     return None
 
-def add_location_info(articles):
+async def add_location_info(articles):
     new_articles = []
-    for article in articles:
-        title = article.get("title", "")
-        description = article.get("description", "")
-        combined_text = f"{title} {description}".strip()
-        if not combined_text:
-            continue
+    async with aiohttp.ClientSession() as session:
+        for article in articles:
+            title = article.get("title", "")
+            description = article.get("description", "")
+            combined_text = f"{title} {description}".strip()
+            if not combined_text:
+                continue
 
-        doc = nlp(combined_text)
-        loc_texts = set(ent.text for ent in doc.ents if ent.label_ in {"GPE", "NORP"})
+            doc = nlp(combined_text)
+            loc_texts = set(ent.text for ent in doc.ents if ent.label_ in {"GPE", "NORP"})
+            normalized_locs = set(location_mapping.get(loc, loc) for loc in loc_texts)
 
-        normalized_locs = set(location_mapping.get(loc, loc) for loc in loc_texts)
+            # 批量异步执行地理编码请求
+            tasks = [geocode_location(session, loc) for loc in normalized_locs]
+            coords_results = await asyncio.gather(*tasks)
 
-        loc_infos = []
-        for loc in normalized_locs:
-            coords = geocode_location(loc)
-            if coords:
-                loc_infos.append({"location": loc, **coords})
+            loc_infos = []
+            for loc, coords in zip(normalized_locs, coords_results):
+                if coords:
+                    loc_infos.append({"location": loc, **coords})
 
-        if loc_infos:
-            article["location"] = loc_infos
-            new_articles.append(article)
+            if loc_infos:
+                article["location"] = loc_infos
+                new_articles.append(article)
 
     return new_articles

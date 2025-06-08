@@ -23,17 +23,17 @@ async def get_articles_with_location(
     # 先获取筛选结果
     if category and start_time and end_time:
         try:
-            data = filter_by_time(category, start_time, end_time)
+            data = await filter_by_time(category, start_time, end_time)
         except Exception as e:
             raise HTTPException(status_code=400, detail=str(e))
     elif category:
         try:
-            data = filter_by_category(category)
+            data = await filter_by_category(category)
         except Exception as e:
             raise HTTPException(status_code=400, detail=str(e))
     elif start_time and end_time:
         try:
-            data = filter_all_by_time(start_time, end_time)
+            data = await filter_all_by_time(start_time, end_time)
         except Exception as e:
             raise HTTPException(status_code=400, detail=str(e))
     else:
