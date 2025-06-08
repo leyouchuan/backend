@@ -8,7 +8,7 @@ import spacy
 from spacy.pipeline import EntityRuler
 import requests
 from pydantic import BaseModel
-from routers.newsapi.filters import filter_by_category, filter_by_time, filter_all_by_time
+from routers.newsapi.filters import filter_by_category, filter_by_time, filter_all_by_time,filter_recent_days
 from typing import List, Optional
 import ast
 
@@ -37,7 +37,10 @@ async def get_articles_with_location(
         except Exception as e:
             raise HTTPException(status_code=400, detail=str(e))
     else:
-        raise HTTPException(status_code=400, detail="请求参数不足，需提供category或start_time与end_time")
+        try:
+            data = filter_recent_days(3)
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=str(e))
 
     articles = data.get("articles", [])
 

@@ -5,15 +5,8 @@ from typing import List, Dict, Any, Optional
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 import geopandas as gpd
-import pandas as pd
 from shapely.geometry import Point
-import matplotlib.pyplot as plt
-from matplotlib.colors import LinearSegmentedColormap
-import numpy as np
-
-# 设置中文字体支持
-plt.rcParams["font.family"] = ["SimHei", "WenQuanYi Micro Hei", "Heiti TC"]
-plt.rcParams["axes.unicode_minus"] = False  # 解决负号显示问题
+from fastapi import APIRouter
 
 router = APIRouter()
 
@@ -147,7 +140,7 @@ def generate_echarts_bar_chart(counts: Dict[str, int]) -> Dict[str, Any]:
     return option
 
 # API端点
-@app.post("/news-by-country", response_model=Dict[str, Any])
+@router.post("/news-by-country", response_model=Dict[str, Any])
 async def get_news_by_country_chart(news_items: List[NewsItem]):
     """获取按国家统计的新闻数量图表"""
     try:

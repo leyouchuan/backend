@@ -93,14 +93,14 @@ async def update_everything_api():
 
 
 # Scheduler setup
-scheduler = BackgroundScheduler()
-INTERVAL = 1  # 每分钟运行一次
-scheduler.add_job(func=update_top_headline, trigger="interval", minutes=INTERVAL)
-scheduler.add_job(func=update_everything, trigger="interval", minutes=INTERVAL)
+#scheduler = BackgroundScheduler()
+#INTERVAL = 1  # 每分钟运行一次
+#scheduler.add_job(func=update_top_headline, trigger="interval", minutes=INTERVAL)
+#scheduler.add_job(func=update_everything, trigger="interval", minutes=INTERVAL)
 #每日五点更新：
 
-if not scheduler.running:
-    scheduler.start()
+#if not scheduler.running:
+#    scheduler.start()
 
-atexit.register(lambda: scheduler.shutdown())
-print("Scheduler started.")
+#atexit.register(lambda: scheduler.shutdown())
+#print("Scheduler started.")

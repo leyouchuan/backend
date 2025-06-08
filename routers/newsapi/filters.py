@@ -98,6 +98,34 @@ def filter_all_by_time(start_time_str: str, end_time_str: str):
 
     return {"totalResults": len(filtered_news), "articles": filtered_news}
 
+def filter_recent_days(days: int = 3):
+    """默认返回近days天内的所有类别的新闻"""
+    now = datetime.now(timezone.utc)
+    past_time = now - timedelta(days=days)
+
+    filtered_news = []
+
+    for category in CATEGORIES:
+        filepath = os.path.join("data", "top-headlines", "category", f"{category}.json")
+        if not os.path.isfile(filepath):
+            continue
+
+        with open(filepath, "r", encoding="utf-8") as f:
+            data = json.load(f)
+
+        for news in data.get("articles", []):
+            pub_time_str = news.get("publishedAt")
+            if not pub_time_str:
+                continue
+            try:
+                pub_time = datetime.fromisoformat(pub_time_str.replace("Z", "+00:00"))
+            except Exception:
+                continue
+            if past_time <= pub_time <= now:
+                filtered_news.append(news)
+
+    return {"totalResults": len(filtered_news), "articles": filtered_news}
+
 def get_everything_by_source(source: str):
     """获取特定来源的所有文章"""
     filepath = f"data/everything/{source}.json"
