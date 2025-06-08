@@ -84,3 +84,10 @@ GET /news/locations/articles/with-location?category=business&start_time=2025-05-
 * `category` 参数需要准确填写支持的类别名称。
 * 返回结果中某些字段（如 `description`, `urlToImage`）可能为null。
 * 下一步拟将地名识别和位置编码放到数据更新时，待待。
+
+# 部署步骤
+
+1. 安装需要的包
+1. 下载一个`en_core_web_sm-3.8.0-py3-none-any.whl` 包，用 `pip install` 本地安装
+1. 将 `charts_data` 和 `data` 文件夹解压到根目录
+1. 创建一个名为 `.env` 的文件，内容参照 `.env.example`
