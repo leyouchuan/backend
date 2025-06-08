@@ -4,6 +4,7 @@ from routers.newsapi.api import router
 from routers.newsapi.location import router as location_router
 from routers.geoserver.exportMap import router as export_router
 from routers.geoserver.layers import router as layers_router
+from routers.newsapi.charts import router as charts_router
 
 app = FastAPI()
 
@@ -15,6 +16,8 @@ async def read_root():
 app.include_router(router, prefix="/news")
 # 包含地点提取路由
 app.include_router(location_router, prefix="/news/locations")
+# 图表路由
+app.include_router(charts_router, prefix="/news/charts")
 
 app.include_router(export_router, prefix="/map", tags=["地图导出"])
 app.include_router(layers_router, prefix="/geoserver", tags=["图层管理"])
