@@ -1,3 +1,7 @@
+from dotenv import load_dotenv
+load_dotenv()
+
+
 from fastapi import FastAPI
 import uvicorn
 from routers.newsapi.api import router
@@ -7,6 +11,13 @@ from routers.geoserver.layers import router as layers_router
 from routers.newsapi.charts import router as charts_router
 from fastapi.middleware.cors import CORSMiddleware
 from routers.newsapi import test_data
+import os
+
+raw_keys = os.getenv("geocoding_api_key")
+print("读取到的 geocoding_api_key =", raw_keys)
+API_KEYS = raw_keys.split(",") if raw_keys else []
+print("解析后的 API_KEYS =", API_KEYS)
+
 
 app = FastAPI()
 

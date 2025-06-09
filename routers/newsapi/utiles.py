@@ -18,7 +18,10 @@ patterns = [
 ]
 ruler.add_patterns(patterns)
 
-BAIDU_MAP_AK = ast.literal_eval(os.getenv("geocoding_api_key"))
+raw_keys = os.getenv("geocoding_api_key")
+BAIDU_MAP_AK = raw_keys.split(",") if raw_keys else []
+if not BAIDU_MAP_AK:
+    raise ValueError("⚠️ 没有找到 geocoding_api_key，请确认 .env 已正确加载")
 LAST_KEY_INDEX = randrange(0, len(BAIDU_MAP_AK))
 def get_key():
     """获取下一个 API 密钥"""
@@ -35,7 +38,7 @@ except Exception as e:
     print(f"加载手动经纬度映射文件失败: {e}")
     manual_coords_mapping = {}  
 #表2
-mapping_file = 'data\location_mapping.json'
+mapping_file = 'data/location_mapping.json'
 try:
     with open(mapping_file, 'r', encoding='utf-8') as f:
         location_mapping = json.load(f)

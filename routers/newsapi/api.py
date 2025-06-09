@@ -7,12 +7,10 @@ from fastapi import APIRouter, HTTPException, Query
 from fastapi.responses import JSONResponse
 from newsapi import NewsApiClient
 from random import randrange
-from dotenv import load_dotenv
 from apscheduler.schedulers.background import BackgroundScheduler
 import atexit
 from routers.newsapi.utiles import add_location_info
 
-load_dotenv()
 
 router = APIRouter()
 
@@ -26,7 +24,9 @@ CATEGORIES = [
 ]
 SOURCES = ["bbc.co.uk", "cnn.com", "foxnews.com", "google.com"]
 
-API_KEYS = ast.literal_eval(os.getenv("API_KEYS"))
+raw_keys = os.getenv("geocoding_api_key")
+API_KEYS = raw_keys.split(",") if raw_keys else []
+
 LAST_KEY_INDEX = randrange(0, len(API_KEYS))
 
 def get_key():
