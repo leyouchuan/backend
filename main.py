@@ -19,6 +19,10 @@ app.add_middleware(
     allow_headers=["*"],  # 允许所有头部
 )
 
+from fastapi.staticfiles import StaticFiles
+import os
+app.mount("/data", StaticFiles(directory=os.path.join(os.path.dirname(__file__), "data")), name="data")
+
 @app.get("/")
 async def read_root():
     return {"message": "Hello World"}
