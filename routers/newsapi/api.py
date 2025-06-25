@@ -10,7 +10,7 @@ from random import randrange
 from dotenv import load_dotenv
 from apscheduler.schedulers.background import BackgroundScheduler
 import atexit
-from routers.newsapi.utiles import add_location_info
+from utils.utiles import add_location_info
 
 load_dotenv()
 

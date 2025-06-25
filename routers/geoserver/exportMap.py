@@ -19,43 +19,51 @@ import time
 
 router = APIRouter()
 
-class PointData(BaseModel):
-    """点数据模型"""
-    latitude: float
-    longitude: float
-    properties: Optional[Dict[str, Any]] = {}
-
-class ExportMapRequest(BaseModel):
-    """地图导出请求模型"""
-    center_lat: float
-    center_lng: float
-    zoom: int
-    width: int = 1024
-    height: int = 768
-    points: Optional[List[PointData]] = []
-    basemap_type: str = "OpenStreetMap"  # 可选: OpenStreetMap, Stamen Terrain, CartoDB positron等
+from typing import List, Optional, Dict, Any
+from pydantic import BaseModel
 
 class ExportMapResponse(BaseModel):
-    """地图导出响应模型"""
     success: bool
     image_base64: Optional[str] = None
     message: str
     geojson: Optional[Dict[str, Any]] = None
 
+class Source(BaseModel):
+    id: Optional[str]
+    name: Optional[str]
+
+class LocationItem(BaseModel):
+    location: Optional[str] = None
+    lat: float
+    lng: float
+
+class Article(BaseModel):
+    id: int
+    source: Source
+    author: Optional[str] = None
+    title: str
+    description: Optional[str] = None
+    url: Optional[str] = None
+    urlToImage: Optional[str] = None
+    publishedAt: Optional[str] = None
+    content: Optional[str] = None
+    location: List[LocationItem]
+
+class ExportMapRequest(BaseModel):
+    center_lat: float
+    center_lng: float
+    zoom: int
+    width: int = 1024
+    height: int = 768
+    articles: List[Article]  # 替换 points
+    basemap_type: str = "OpenStreetMap"
+
 def create_folium_map(request: ExportMapRequest) -> folium.Map:
-    """创建folium地图对象"""
-    # 根据basemap_type选择底图
     tiles_mapping = {
-        "OpenStreetMap": "OpenStreetMap",
-        "Stamen Terrain": "Stamen Terrain",
-        "Stamen Toner": "Stamen Toner",
-        "CartoDB positron": "CartoDB positron",
-        "CartoDB dark_matter": "CartoDB dark_matter"
+        # 保持不变
     }
-    
     tiles = tiles_mapping.get(request.basemap_type, "OpenStreetMap")
-    
-    # 创建地图
+
     m = folium.Map(
         location=[request.center_lat, request.center_lng],
         zoom_start=request.zoom,
@@ -63,44 +71,49 @@ def create_folium_map(request: ExportMapRequest) -> folium.Map:
         width=request.width,
         height=request.height
     )
-    
-    # 添加点数据
-    if request.points:
-        for point in request.points:
-            # 创建标记
-            popup_text = ""
-            if point.properties:
-                popup_text = "<br>".join([f"{k}: {v}" for k, v in point.properties.items()])
-            
+
+    for article in request.articles:
+        # 逐个article对应多个点
+        for loc in article.location:
+            popup_text = f"<b>{article.title}</b><br>"
+            popup_text += (article.description or "") + "<br>"
+            popup_text += f"来源: {article.source.name if article.source else ''}<br>"
+            popup_text += f"发布时间: {article.publishedAt or ''}<br>"
+            if article.url:
+                popup_text += f"<a href='{article.url}' target='_blank'>阅读全文</a>"
+
             folium.Marker(
-                location=[point.latitude, point.longitude],
-                popup=folium.Popup(popup_text, max_width=300) if popup_text else None,
-                tooltip=f"点位: ({point.latitude:.6f}, {point.longitude:.6f})"
+                location=[loc.lat, loc.lng],
+                popup=folium.Popup(popup_text, max_width=300),
+                tooltip=article.title
             ).add_to(m)
-    
+
     return m
 
-def points_to_geojson(points: List[PointData]) -> Dict[str, Any]:
-    """将点数据转换为GeoJSON格式"""
+#转json
+def articles_to_geojson(articles: List[Article]) -> Dict[str, Any]:
     features = []
-    
-    for point in points:
-        feature = {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [point.longitude, point.latitude]
-            },
-            "properties": point.properties or {}
-        }
-        features.append(feature)
-    
-    geojson = {
+    for article in articles:
+        for loc in article.location:
+            features.append({
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [loc.lng, loc.lat]
+                },
+                "properties": {
+                    "id": article.id,
+                    "title": article.title,
+                    "description": article.description,
+                    "url": article.url,
+                    "source": article.source.dict() if article.source else {},
+                    "publishedAt": article.publishedAt
+                }
+            })
+    return {
         "type": "FeatureCollection",
         "features": features
     }
-    
-    return geojson
 
 def capture_map_image(folium_map: folium.Map, width: int, height: int) -> str:
     """使用undetected_chromedriver截取地图图片并返回base64编码"""
@@ -182,25 +195,6 @@ def capture_map_image(folium_map: folium.Map, width: int, height: int) -> str:
 
 @router.post("/export", response_model=ExportMapResponse)
 async def export_map(request: ExportMapRequest):
-    """
-    导出当前视野的地图为图片
-    
-    参数说明:
-    - center_lat: 地图中心纬度
-    - center_lng: 地图中心经度
-    - zoom: 缩放级别 (1-18)
-    - width: 图片宽度 (默认1024)
-    - height: 图片高度 (默认768)
-    - points: 点数据列表
-    - basemap_type: 底图类型
-    
-    返回:
-    - success: 是否成功
-    - image_base64: 图片的base64编码
-    - message: 响应消息
-    - geojson: 点数据的GeoJSON格式
-    """
-    
     try:
         # 参数验证
         if not (-90 <= request.center_lat <= 90):
@@ -217,27 +211,21 @@ async def export_map(request: ExportMapRequest):
         
         # 创建folium地图
         folium_map = create_folium_map(request)
-        
-        # 截取地图图片
         image_base64 = capture_map_image(folium_map, request.width, request.height)
-        
-        # 转换点数据为GeoJSON
-        geojson_data = None
-        if request.points:
-            geojson_data = points_to_geojson(request.points)
-        
+        geojson_data = articles_to_geojson(request.articles)
+
         return ExportMapResponse(
             success=True,
             image_base64=image_base64,
-            message=f"成功导出地图图片，包含{len(request.points or [])}个点",
-            geojson=geojson_data
-        )
-        
+            message=f"成功导出地图，包含{len(request.articles)}条新闻",
+            geojson=geojson_data )
     except HTTPException:
         raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"导出地图失败: {str(e)}")
+    
 
+#这些用不到。。。
 @router.get("/export/test")
 async def test_export():
     """

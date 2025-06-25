@@ -8,7 +8,7 @@ import spacy
 from spacy.pipeline import EntityRuler
 import requests
 from pydantic import BaseModel
-from routers.newsapi.filters import filter_by_category, filter_by_time, filter_all_by_time,filter_recent_days
+from utils.filters import filter_by_category, filter_by_time, filter_all_by_time,filter_recent_days
 from typing import List, Optional
 import ast
 
