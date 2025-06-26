@@ -25,9 +25,8 @@ CATEGORIES = [
 ]
 SOURCES = ["bbc.co.uk", "cnn.com", "foxnews.com", "google.com"]
 
-raw_keys = os.getenv("geocoding_api_key")
-API_KEYS = raw_keys.split(",") if raw_keys else []
-
+API_KEYS = ast.literal_eval(os.getenv("API_KEYS"))
+print("解析后的apikey=",API_KEYS)
 LAST_KEY_INDEX = randrange(0, len(API_KEYS))
 
 def get_key():
@@ -94,21 +93,15 @@ async def update_everything_api():
 
 
 # Scheduler setup
-scheduler = BackgroundScheduler()
-INTERVAL = 1  # 每分钟运行一次
-scheduler.add_job(func=update_top_headline, trigger="interval", minutes=INTERVAL)
-scheduler.add_job(func=update_everything, trigger="interval", minutes=INTERVAL)
+from apscheduler.schedulers.asyncio import AsyncIOScheduler
+
+scheduler = AsyncIOScheduler()  # 使用 AsyncIO 版本的调度器
+scheduler.start()
+INTERVAL = 1  # 更新间隔，单位为分钟
+scheduler.add_job(update_everything, trigger="interval", minutes=INTERVAL)  # 直接传异步函数即可
+scheduler.add_job(update_top_headline, trigger="interval", minutes=INTERVAL)
+
 #每日五点更新：
-scheduler.add_job(
-    func=update_top_headline,
-    trigger=CronTrigger(hour=5, minute=0),
-)
-
-scheduler.add_job(
-    func=update_everything,
-    trigger=CronTrigger(hour=5, minute=0),
-)
-
 
 if not scheduler.running:
     scheduler.start()
