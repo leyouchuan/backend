@@ -9,6 +9,7 @@ from newsapi import NewsApiClient
 from random import randrange
 from dotenv import load_dotenv
 from apscheduler.schedulers.background import BackgroundScheduler
+from apscheduler.triggers.cron import CronTrigger
 import atexit
 from utils.utiles import add_location_info
 
@@ -73,7 +74,7 @@ def update_everything():
         print(f"Started updating source: {source} at: {time.strftime('%A, %d. %B %Y %I:%M:%S %p')}")
         all_articles = newsapi.get_everything(
             sources=source,
-            from_param=(datetime.now() - timedelta(hours=10, minutes=30)).date().isoformat(),
+            from_param=(datetime.now() - timedelta(hours=12, minutes=30)).date().isoformat(),
             language='en',
             sort_by='publishedAt',
             page_size=100
@@ -93,14 +94,23 @@ async def update_everything_api():
 
 
 # Scheduler setup
-#scheduler = BackgroundScheduler()
-#INTERVAL = 1  # 每分钟运行一次
-#scheduler.add_job(func=update_top_headline, trigger="interval", minutes=INTERVAL)
-#scheduler.add_job(func=update_everything, trigger="interval", minutes=INTERVAL)
+scheduler = BackgroundScheduler()
+INTERVAL = 1  # 每分钟运行一次
+scheduler.add_job(func=update_top_headline, trigger="interval", minutes=INTERVAL)
+scheduler.add_job(func=update_everything, trigger="interval", minutes=INTERVAL)
 #每日五点更新：
+scheduler.add_job(
+    func=update_top_headline,
+    trigger=CronTrigger(hour=5, minute=0),
+)
 
-#if not scheduler.running:
-#    scheduler.start()
+scheduler.add_job(
+    func=update_everything,
+    trigger=CronTrigger(hour=5, minute=0),
+)
 
-#atexit.register(lambda: scheduler.shutdown())
-#print("Scheduler started.")
+
+if not scheduler.running:
+    scheduler.start()
+atexit.register(lambda: scheduler.shutdown())
+print("Scheduler started.")
