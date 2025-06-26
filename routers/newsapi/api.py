@@ -10,9 +10,10 @@ from random import randrange
 from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.triggers.cron import CronTrigger
 import atexit
+from dotenv import load_dotenv
 from utils.utiles import add_location_info
 
-
+load_dotenv()
 router = APIRouter()
 
 COUNTRIES_LANGUAGES = {
@@ -111,7 +112,6 @@ scheduler.add_job(
     func=update_everything,
     trigger=CronTrigger(hour=5, minute=0),
 )
-
 
 if not scheduler.running:
     scheduler.start()
