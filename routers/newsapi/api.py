@@ -102,6 +102,16 @@ scheduler.add_job(update_everything, trigger="interval", minutes=INTERVAL)  # �
 scheduler.add_job(update_top_headline, trigger="interval", minutes=INTERVAL)
 
 #每日五点更新：
+scheduler.add_job(
+    func=update_top_headline,
+    trigger=CronTrigger(hour=5, minute=0),
+)
+
+scheduler.add_job(
+    func=update_everything,
+    trigger=CronTrigger(hour=5, minute=0),
+)
+
 
 if not scheduler.running:
     scheduler.start()

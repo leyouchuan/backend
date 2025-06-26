@@ -13,11 +13,12 @@ from fastapi.middleware.cors import CORSMiddleware
 from routers.newsapi import test_data
 import os
 
-#raw_keys = os.getenv("geocoding_api_key")
-#print("读取到的 geocoding_api_key =", raw_keys)
-#API_KEYS = raw_keys.split(",") if raw_keys else []
-#print("解析后的 API_KEYS =", API_KEYS)
-
+raw_keys = os.getenv("geocoding_api_key")
+print("读取到的 geocoding_api_key =", raw_keys)
+API_KEYS = raw_keys.split(",") if raw_keys else []
+print("解析后的 API_KEYS =", API_KEYS)
+HOST= os.getenv("host", "127.0.0.1")
+PORT= os.getenv("port", 7000)
 
 app = FastAPI()
 
@@ -51,4 +52,4 @@ app.include_router(export_router, prefix="/map", tags=["地图导出"])
 app.include_router(layers_router, prefix="/geoserver", tags=["图层管理"])
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    uvicorn.run(app, host=host, port=port)
