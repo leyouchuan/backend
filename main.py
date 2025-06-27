@@ -10,6 +10,7 @@ from routers.geoserver.exportMap import router as export_router
 from routers.geoserver.layers import router as layers_router
 from routers.newsapi.charts import router as charts_router
 from fastapi.middleware.cors import CORSMiddleware
+from routers.newsapi.api import setup_scheduler
 from routers.newsapi import test_data
 import os
 
@@ -52,5 +53,11 @@ app.include_router(test_data.router, prefix="/news/test")  # 新增测试数据�
 app.include_router(export_router, prefix="/map", tags=["地图导出"])
 app.include_router(layers_router, prefix="/geoserver", tags=["图层管理"])
 
+# 设置自动更新
+
+@app.on_event("startup")
+async def startup_event():
+    setup_scheduler()
+
 if __name__ == "__main__":
-    uvicorn.run(app, host=host, port=port)
+    uvicorn.run(app, host=HOST, port=PORT)

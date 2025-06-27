@@ -93,27 +93,26 @@ async def update_everything_api():
     return {"status": "updated"}
 
 
-# Scheduler setup
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
+from apscheduler.triggers.cron import CronTrigger
+import atexit
 
-scheduler = AsyncIOScheduler()  # 使用 AsyncIO 版本的调度器
-scheduler.start()
-INTERVAL = 1  # 更新间隔，单位为分钟
-scheduler.add_job(update_everything, trigger="interval", minutes=INTERVAL)  # 直接传异步函数即可
-scheduler.add_job(update_top_headline, trigger="interval", minutes=INTERVAL)
+# 先创建调度器
+scheduler = AsyncIOScheduler()
+INTERVAL = 1  # 每隔多少分钟执行一次
 
-#每日五点更新：
-scheduler.add_job(
-    func=update_top_headline,
-    trigger=CronTrigger(hour=5, minute=0),
-)
+# 注册任务（注意：不调用 .start()）
+def setup_scheduler():
+    # 避免重复注册任务
+    if not scheduler.running:
+        # 自动按时间间隔更新脚本，不用则注释掉
+        # scheduler.add_job(update_everything, trigger="interval", minutes=INTERVAL)
+        # scheduler.add_job(update_top_headline, trigger="interval", minutes=INTERVAL)
 
-scheduler.add_job(
-    func=update_everything,
-    trigger=CronTrigger(hour=5, minute=0),
-)
+        # 每天 5:00 运行
+        scheduler.add_job(update_top_headline, trigger=CronTrigger(hour=5, minute=0))
+        scheduler.add_job(update_everything, trigger=CronTrigger(hour=5, minute=0))
 
-if not scheduler.running:
-    scheduler.start()
-atexit.register(lambda: scheduler.shutdown())
-print("Scheduler started.")
+        scheduler.start()
+        print("Scheduler started.")
+        atexit.register(lambda: scheduler.shutdown())
