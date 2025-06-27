@@ -5,7 +5,7 @@ import time
 from datetime import datetime, timedelta, timezone
 from fastapi import APIRouter, HTTPException, Query
 from fastapi.responses import JSONResponse
-from newsapi import NewsApiClient
+from newsapi.newsapi_client import NewsApiClient
 from random import randrange
 from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.triggers.cron import CronTrigger
@@ -26,7 +26,7 @@ CATEGORIES = [
 ]
 SOURCES = ["bbc.co.uk", "cnn.com", "foxnews.com", "google.com"]
 
-API_KEYS = ast.literal_eval(os.getenv("API_KEYS"))
+API_KEYS = os.getenv("API_KEYS").split(',')
 print("解析后的apikey=",API_KEYS)
 LAST_KEY_INDEX = randrange(0, len(API_KEYS))
 
